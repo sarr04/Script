@@ -1,32 +1,32 @@
-import * as React from "react";
-import Root from "./routes/root.tsx";
-import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+import About from "./NavBar/About";
+import Speakers from "./NavBar/Speakers";
+import Schedule from "./NavBar/Schedule";
+import BookATicket from "./NavBar/BookATicket";
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <div>
-          <h1>About</h1>
-          <Link to="about">About </Link>
-        </div>
-      ),
-    },
-    {
-      path: "about",
-      element: <div>About</div>,
-    },
-  ]);
-
-  createRoot(document.getElementById("root")).render(
-    <RouterProvider router={router} />
+  return (
+    <div>
+      <main>
+        <About />
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/Home" />
+          </Route>
+          <Route path="/About">
+            <About />
+          </Route>
+          <Route path="/Speakers" exact>
+            <Speakers />
+          </Route>
+          <Route path="./Schedule">
+            <Schedule />
+          </Route>
+          <Route path="./BookATicket">
+            <BookATicket />
+          </Route>
+        </Switch>
+      </main>
+    </div>
   );
 }
-
 export default App;
