@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <div>
+      test
       <NavBar />
       <main>
         <About />
@@ -29,7 +30,6 @@ function App() {
           </Route>
         </Switch>
       </main>
-
       <Schedule />
     </div>
   );
