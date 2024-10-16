@@ -1,13 +1,34 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+import pic from "./components/pic";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
-
+import About from "./pages/About";
+import Speakers from "./components/home/Speakers";
+import Schedule from "./pages/Schedule";
+import BookATicket from "./pages/BookATicket";
+import Hero from "./components/home/Hero";
+import Aboutt from "./components/home/Aboutt";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/speakers",
+    element: <Speakers />,
+  },
+  {
+    path: "/schedule",
+    element: <Schedule />,
+  },
+  {
+    path: "/bookaticket",
+    element: <BookATicket />,
   },
 ]);
 
