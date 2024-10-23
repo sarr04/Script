@@ -1,5 +1,5 @@
 import * as React from "react";
-import pic from "./components/pic";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
@@ -9,6 +9,7 @@ import Schedule from "./pages/Schedule";
 import BookATicket from "./pages/BookATicket";
 import Hero from "./components/home/Hero";
 import Aboutt from "./components/home/Aboutt";
+import Box from "./components/box";
 const router = createBrowserRouter([
   {
     path: "/",
