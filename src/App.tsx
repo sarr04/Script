@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <Schedule />,
   },
   {
-    path: "/bookaticket",
+    path: "/BookATicket",
     element: <BookATicket />,
   },
 ]);

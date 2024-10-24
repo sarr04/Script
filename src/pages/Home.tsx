@@ -8,7 +8,10 @@ import Footer from "../components/home/Footer";
 export default function Home() {
   return (
     <div className="font-primaryRegular">
-      <NavBar />
+      <NavBar
+        buttonClass="bg-gradient-to-r from-orange-400 to-pink-500  hover:bg-blue-700"
+        imageSrc="/img/Logo.png"
+      />
       <Hero />
       <Aboutt />
       <Speakers />

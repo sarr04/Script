@@ -6,12 +6,13 @@ export default function Footer() {
         <h1 className="text-4xl font-bold text-center">OUR PARTNERS</h1>
 
         <div className="lg:flex lg:flex-row lg:justify-center lg:mt-4 lg:grid-rows-1 sm:grid sm:grid-cols-3 sm:gap-2">
-          <img src="/img/Logxo.png" className="mx-2" />
-          <img src="/img/Loxgo.png" className="mx-2" />
-          <img src="/img/paypal.png" className="mx-2" />
-          <img src="/img/visa.png" className="mx-2" />
-          <img src="/img/gpay.png" className=" lg:mx-2 sm:mx-7" />
-          <img src="/img/apple.png" className="mx-2" />
+          <img src="/img/Logxo.png" className="lg:mx-2 mx-2" />
+          <img src="/img/Loxgo.png" className="lg:mx-2 mx-2" />
+          <img src="/img/paypal.png" className="lg:mx-2 mx-2" />
+          <img src="/img/visa.png" className="lg:mx-2 mx-2" />
+
+          <img src="/oo.png" className=" lg:mx-2 mx-2" />
+          <img src="/img/apple.png" className="lg:mx-2 mx-2" />
         </div>
       </div>
 
@@ -25,7 +26,6 @@ export default function Footer() {
             <h3 className="text-white font-bold">Follow Us</h3>
             <div className=" flex">
               <a href="https://www.instagram.com/">
-                {" "}
                 <img src="/img/insta.svg " />
               </a>
               <a href="">
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <img className="absolute top-12 -z-10 h-[558px] " src="/img/ll.png" />
+        <img src="/img/ll.png" className="absolute top-12 -z-10 h-[558px] " />
       </div>
     </footer>
   );

@@ -17,9 +17,12 @@ export default function Socials(props) {
           <img className="w-[25px]" src="../public/img/ig.png" />
         </Link>
       </div>
-      <div className=" text-white flex flex-col items-center">
-        <p className="font-bold">{props.name}</p>
-        <p>{props.work}</p>
+      <div
+        className=" text-white flex flex-col items-center
+      "
+      >
+        <div> {props.name}</div>
+        <div> {props.work}</div>
       </div>
     </div>
   );
