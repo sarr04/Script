@@ -3,9 +3,9 @@ import React from "react";
 type Props = {
   children: React.ReactNode;
   onClick?: () => void;
-  className?: string; // General additional classes for outer div
+  className?: string;
   type?: "button" | "submit" | "reset";
-  customStyles?: string; // Custom Tailwind classes for the button itself
+  customStyles?: string;
 };
 
 export default function ScriptBtn({
@@ -13,7 +13,7 @@ export default function ScriptBtn({
   onClick,
   className = "",
   type = "button",
-  customStyles = "", // Default to an empty string if not provided
+  customStyles = "",
 }: Props) {
   return (
     <div className={className}>
