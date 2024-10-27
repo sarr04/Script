@@ -1,4 +1,6 @@
-const BookATicket = () => {
-  return <h1>book a ticket page</h1>;
+import NavBar from "../components/NavBar";
+
+const BookATicket = (props) => {
+  return;
 };
 export default BookATicket;

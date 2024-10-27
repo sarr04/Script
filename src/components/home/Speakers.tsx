@@ -1,6 +1,6 @@
 import Socials from "../Socials";
-
-export default function Speakers() {
+import ScriptBtn from "../ScriptBtn";
+export default function Speakers(buttonClass) {
   return (
     <div className="pl-12 pr-12  overflow-hidden relative z-10 ">
       <div className="block justify-center items-center min-h-screen ml-12 mr-12 ">
@@ -68,9 +68,15 @@ export default function Speakers() {
             </div>
           </div>
           <div className="flex justify-center mt-4 ">
-            <button className="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-gray-500  text-white border border-white rounded-2xl  px-12 py-2 mb-8">
+            {/* <button className="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-gray-500  text-white border border-white rounded-2xl  px-12 py-2 mb-8">
               View All
-            </button>
+            </button> */}
+            <ScriptBtn
+              customStyles={`bg-transparent border-2  bg-white/10  backdrop-blur-[150px] border-white text-white ${buttonClass}`}
+              className="mb-8"
+            >
+              <a href="./ScriptBtn.tsx">View All</a>
+            </ScriptBtn>
           </div>
         </div>
       </div>

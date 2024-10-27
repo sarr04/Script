@@ -1,4 +1,5 @@
-export default function Join() {
+import ScriptBtn from "../ScriptBtn";
+export default function Join(buttonClass) {
   return (
     <div className="overflow-hidden">
       <div className="container  lg:mx-auto lg:mt-12 ml-7 ">
@@ -10,9 +11,14 @@ export default function Join() {
               <br /> learn, and grow with then top influencers
               <br /> and experts in the industry.
             </p>
-            <button className="mt-4 py-1 px-7 ml-2 mr-2  text-white font-semibold rounded-2xl bg-gradient-to-r from-orange-400 to-pink-500  border-white ">
+            {/* <button className="mt-4 py-1 px-7 ml-2 mr-2  text-white font-semibold rounded-2xl bg-gradient-to-r from-orange-400 to-pink-500  border-white ">
               Book A Ticket
-            </button>
+            </button> */}
+            <ScriptBtn
+              className={` mt-9 bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl text-center ${buttonClass}`}
+            >
+              <a href="/BookATicket">Book A Ticket</a>
+            </ScriptBtn>
           </div>
 
           <img className=" w-[200px] lg:w-[465px]" src="../public/img/00.png" />

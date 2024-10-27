@@ -37,7 +37,7 @@ const About = () => {
                   their platforms with the latest trends and tools
                 </p>
               </div>
-              <div className="flex items-center justify-between w-full p-4">
+              <div className="flex items-center justify-between w-full p-4 ">
                 <img className="" src="/bookholding.png" />
               </div>
             </div>
@@ -96,6 +96,7 @@ const About = () => {
           <h3 className="font-bold ">Here's who you'll meet at SCRIPT:</h3>
         </div>
       </div>
+      <div className=" bg-gradient-to-b from-blue-300 to-purple-500"></div>
     </section>
   );
 };

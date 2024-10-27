@@ -1,8 +1,10 @@
-export default function Hero() {
+import ScriptBtn from "../ScriptBtn";
+
+export default function Hero(buttonClass) {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex hero justify-center items-center ">
       <div className="w-full max-w-5xl px-6 lg:px-0">
-        <div className="text-white rounded-3xl bg-gradient-to-r from-orange-400 to-pink-500 pb-20 relative z-10">
+        <div className="text-white rounded-[2rem]  bg-gradient-to-r from-orange-400 to-pink-500 pb-20 relative z-10">
           <h2 className="text-white justify-center text-center font-bold text-3xl tracking-widest pb-3 pt-12">
             THE PREMIER CONFERENCE
             <br /> FOR SOCIAL MEDIA INFLUENCERS.
@@ -14,9 +16,14 @@ export default function Hero() {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <button className="border border-white px-3 py-2 lg:px-10 font-bold items-center hover:bg-slate-600 rounded-full text-white lg:m-7">
+            {/* <button className="border border-white px-3 py-2 lg:px-10 font-bold items-center hover:bg-slate-600 rounded-full text-white lg:m-7">
               Book a Ticket
-            </button>
+            </button> */}
+            <ScriptBtn
+              className={`m-4 border border-white rounded-[2rem] ${buttonClass}`}
+            >
+              <a href="/BookATicket">Book A Ticket</a>
+            </ScriptBtn>
           </div>
         </div>
 
