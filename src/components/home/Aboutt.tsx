@@ -22,19 +22,19 @@ export default function Aboutt(buttonClass) {
             established a new environment for communication. We, the Syrians,
             have an old story with content creation.
           </p>
-          <div className="lg:items-center lg:flex lg:justify-center lg:pt-8">
+          <div className="items-center flex justify-center lg:pt-8">
             {/* <button className="bg-gradient-to-r from-orange-400 to-pink-500 text-white hover:bg-gray-600 px-6 py-2 rounded-2xl">
               Learn More
             </button> */}
             <ScriptBtn
-              className={`bg-gradient-to-r from-orange-400 to-pink-500 rounded-[2rem] text  ${buttonClass}`}
+              className={`bg-gradient-to-r from-orange-400 to-pink-500 rounded-[2rem]   ${buttonClass}`}
             >
               <a href="">Learn more</a>
             </ScriptBtn>
           </div>
         </div>
 
-        <div className="relative  lg:px-30 lg:mt-8 lg:w-full">
+        {/* <div className="relative  lg:px-30 lg:mt-8 lg:w-full">
           <div className="   lg:w-full bg-gradient-to-r  from-orange-400 to-pink-500 rounded-3xl  p-6">
             <div className="relative grid grid-cols-1 md:grid-cols-3 lg:gap-36 lg: p-8 text-center ">
               <div className="relative bg-gradient-to-r from-orange-400 to-pink-500 lg:p-6 aspect-square rounded-[3rem] overflow-hidden lg:flex lg:flex-col lg:items-center lg:text-center shadow-lg">
@@ -88,12 +88,68 @@ export default function Aboutt(buttonClass) {
                     className="absolute right-0 top-0 text-white lg:w-[50%]"
                   />
                 </div>
-                <h2 className="text-4xl  font-bold text-white absolute bottom-64">
+                <h2 className="text-4xl  font-bold text-white absolute bottom-44">
                   2000
                 </h2>
                 <p className="text-lg font-semibold text-center text-white">
                   Attendees
                 </p>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        <div className="relative lg:px-30 lg:mt-8 w-full">
+          <div className="bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl p-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 text-center lg:p-8">
+              <div className="relative bg-gradient-to-r from-orange-400 to-pink-500 lg:p-6 aspect-square rounded-[2rem] flex flex-col items-center text-center shadow-lg">
+                <img
+                  className="bg-white lg:p-2 rounded-full absolute top-5 left-5 lg:w-8 lg:h-8"
+                  src="/img/peoplee.svg"
+                  alt="Speaker Icon"
+                />
+                <img
+                  src="/Group 2.png"
+                  className="absolute top-0 right-0 w-1/3 opacity-50"
+                  alt="Pattern"
+                />
+                <h2 className="lg:text-4xl font-bold text-white mt-12">10+</h2>
+                <p className="lg:text-lg font-semibold text-white lg:mt-2">
+                  Speakers
+                </p>
+              </div>
+
+              <div className="relative  bg-gradient-to-r from-orange-400 to-pink-500 lg:p-6 aspect-square rounded-[2rem] flex flex-col items-center text-center shadow-lg">
+                <img
+                  className="bg-white lg:p-2 rounded-full absolute top-5 left-5 lg:w-8 lg:h-8"
+                  src="/img/mdi_talk.svg"
+                />
+                <img
+                  src="/Group 2.png"
+                  className="absolute top-0 right-0 w-1/3 opacity-50"
+                />
+                <h2 className="lg:text-4xl font-bold text-white mt-12">50+</h2>
+                <p className="lg:text-lg font-semibold text-white mt-2">
+                  Sessions
+                </p>
+              </div>
+
+              <div className="justify ">
+                <div className="relative  bg-gradient-to-r from-orange-400 to-pink-500 lg:p-6 aspect-square rounded-[2rem] flex flex-col items-center text-center shadow-lg">
+                  <img
+                    className="bg-white lg:p-2 rounded-full absolute top-5 left-5 lg:w-8 lg:h-8"
+                    src="/img/mic.svg"
+                  />
+                  <img
+                    src="/Group 2.png"
+                    className="absolute top-0 right-0 w-1/3 opacity-50"
+                  />
+                  <h2 className="lg:text-4xl font-bold text-white mt-12">
+                    2000
+                  </h2>
+                  <p className="lg:text-lg font-semibold text-white mt-2">
+                    Attendees
+                  </p>
+                </div>
               </div>
             </div>
           </div>

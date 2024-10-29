@@ -15,36 +15,36 @@ export default function Speakers(buttonClass) {
             Meet the visionaries shaping the <br /> future of social media.
           </h4>
         </div>
-        <div className="bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl mb-24 relative z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:gap-1 sm:grid-cols-2 lg:gap-4 items-center justify-center lg:pb-10 lg:p-10">
-            <div className="flex flex-col items-center">
+        <div className="bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl gap-10 mb-24 relative z-20">
+          <div className="grid  lg:grid-cols-4 grid-cols-2 sm:gap-1  lg:gap-4 items-center justify-center lg:pb-10 lg:p-10">
+            <div className="flex flex-col gap-2 items-center">
               <img className="inline " src="../public/img/a.png" />
               <div className="translate-y-[-30%] ">
                 <Socials name="krisatin" work="influencer" />
               </div>
             </div>
 
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col   items-center">
               <img src="../public/img/b.png" />
               <div className="translate-y-[-30%] ">
                 <Socials name="Jerome Bell" work="influencer" />
               </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col  items-center">
               <img src="../public/img/c.png" />
               <div className="translate-y-[-30%] ">
                 <Socials name="Jacob Jones" work="influencer" />
               </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col  items-center">
               <img src="../public/img/d.png" />
               <div className="translate-y-[-30%] ">
                 <Socials name="Cameron Williamson " work="influencer" />
               </div>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col  items-center">
               <img src="../public/img/e.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]   ">
                 <Socials name="Devon Lane" work="influencer" />
               </div>
             </div>
