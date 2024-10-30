@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NavBar from "../../components/NavBar";
 
 const input = () => {
   const [inputValue, setInputValue] = useState("");
@@ -14,6 +15,11 @@ const input = () => {
 
   return (
     <div>
+      <NavBar
+        buttonClass="bg-gradient-to-b from-blue-300 to-purple-500 hover:bg-blue-700"
+        imageSrc="/img/Logoblue.svg"
+      />
+
       <label htmlFor="textInput"></label>
       <input
         id=""

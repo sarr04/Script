@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 
 const BookATicket = (props) => {
-  return;
+  return <NavBar />;
 };
 export default BookATicket;

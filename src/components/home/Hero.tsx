@@ -29,21 +29,22 @@ export default function Hero(buttonClass) {
 
         <div className=" container flex flex-row absolute bottom-12 lg:bottom-0 gap-2 lg:flex-row justify-center items-center lg:space-x-6 lg:space-y-0 space-y-2 lg:-mt-20 mt-5 relative z-20">
           <img
-            className="w-[100px] lg:w-[180px] rounded-3xl object-contain"
+            className="hidden md:block w-[100px] lg:w-[180px] rounded-3xl object-contain"
             src="../public/img/d6.png"
           />
 
           <img
-            className="w-[150px]  lg:w-[250px] rounded-3xl object-contain"
+            className="  w-[150px]  lg:w-[250px] rounded-3xl object-contain"
             src="../public/img/dsdsd.png"
           />
+
           <img
-            className="w-[150px]  lg:w-[250px] rounded-3xl object-contain"
+            className=" w-[150px]  lg:w-[250px] rounded-3xl object-contain"
             src="../public/img/sit.png"
           />
 
           <img
-            className="w-[100px]  lg:w-[180px] rounded-3xl object-contain"
+            className="  hidden md:block w-[100px]  lg:w-[180px] rounded-3xl object-contain"
             src="../public/img/Rectassngle 6.png"
           />
         </div>

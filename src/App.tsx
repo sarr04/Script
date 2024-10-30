@@ -10,6 +10,7 @@ import BookATicket from "./pages/BookATicket";
 import Hero from "./components/home/Hero";
 import Aboutt from "./components/home/Aboutt";
 import Box from "./components/box";
+import { useForm } from "react-hook-form";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,8 +36,8 @@ const router = createBrowserRouter([
 
 export default function () {
   return (
-    <React.StrictMode>
+    <div>
       <RouterProvider router={router} />
-    </React.StrictMode>
+    </div>
   );
 }

@@ -20,7 +20,7 @@ export default function ScriptBtn({
       <button
         type={type}
         onClick={onClick}
-        className={`lg:px-20 lg:py-4 py-1 px-1 rounded-[2rem] text-white text-xl font-bold ${customStyles}`}
+        className={`lg:px-20 lg:py-4 py-3 px-8 rounded-[2rem] text-white text-xl font-bold ${customStyles}`}
       >
         {children}
       </button>

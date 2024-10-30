@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Socials(props) {
   return (
     <div>
-      <div className=" grid grid-cols-4 lg:gap-6  gap-2 lg:px-8 lg:py-4 px-2 py-2 rounded-3xl overflow-hidden bg-white/10  backdrop-blur-[150px]  my-4 ">
+      <div className=" grid grid-cols-4 lg:gap-6 lg:px-8 lg:py-4  py-2 rounded-3xl overflow-hidden bg-white/10  backdrop-blur-[150px]  my-4 ">
         <Link to="https://x.com/?lang=en">
           <img className="lg:w-[25px]" src="../public/img/x.png" />
         </Link>
