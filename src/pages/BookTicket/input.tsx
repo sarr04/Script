@@ -1,7 +1,9 @@
 import { useState } from "react";
 import NavBar from "../../components/NavBar";
 import { useForm, SubmitHandler } from "react-hook-form";
-
+import ScriptBtn from "../../components/ScriptBtn";
+import { Link } from "react-router-dom";
+import Chat from "./Chat";
 type Inputs = {
   firstName: string;
   lastName: string;
@@ -13,7 +15,7 @@ type Inputs = {
   linkedInHandle: string;
 };
 
-const Input = () => {
+const Input = (buttonClass) => {
   const {
     register,
     handleSubmit,
@@ -25,12 +27,12 @@ const Input = () => {
   return (
     <div>
       <NavBar
-        buttonClass="bg-gradient-to-b from-blue-300 to-purple-500 hover:bg-blue-700"
-        imageSrc="/img/Logoblue.svg"
+        buttonClass="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-blue-700"
+        imageSrc=" ../img/Logo.png"
       />
 
-      <div className="flex  items-center">
-        <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mb-6">
+      <div className=" flex  items-center">
+        <div className=" w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mb-6">
           <span className="text-4xl text-gray-500"></span>
         </div>
 
@@ -70,6 +72,8 @@ const Input = () => {
           <div className="flex">
             <select className="w-1/4 p-2 border rounded-l">
               <option value="+963">+963</option>
+              <option value="+123">+123</option>
+              <option value="456">+456</option>
             </select>
             <input
               placeholder="Phone Number"
@@ -104,14 +108,15 @@ const Input = () => {
             {...register("linkedInHandle")}
             className="w-full p-2 border rounded"
           />
-
-          <button
-            type="submit"
-            className="w-full p-3 mt-4 text-white font-bold rounded bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600"
-          >
-            NEXT
-          </button>
+          <Link to="/Chat">
+            <ScriptBtn
+              className={`text-white  bg-gradient-to-r from-orange-400 to-pink-500 mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
+            >
+              Next
+            </ScriptBtn>
+          </Link>
         </form>
+        {/* <img src="/img/brand.png" className="w-[400pxpx] " /> */}
       </div>
     </div>
   );

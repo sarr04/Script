@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Speakers from "./components/home/Speakers";
 import Schedule from "./pages/Schedule";
 import BookATicket from "./pages/BookATicket";
+import Chat from "./pages/BookTicket/Chat";
 import Hero from "./components/home/Hero";
 import Aboutt from "./components/home/Aboutt";
 import Box from "./components/box";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/BookATicket",
     element: <BookATicket />,
+  },
+  {
+    path: "/Chat",
+    element: <Chat />,
   },
 ]);
 
