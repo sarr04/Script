@@ -175,7 +175,7 @@ const About = (buttonClass) => {
       </div>
       <div className="mt-9 text-5xl font-bold text-center">DAILY SCHEDULE </div>
       <div className="grid-cols-2">
-        <div className="container">
+        <div className="">
           <h4 className="font-bold">
             Welcome to the Script Conference! Here’s What You Can Expect
           </h4>
@@ -202,7 +202,7 @@ const About = (buttonClass) => {
             <img src="/img/apple.png" className="h-10 mx-2" />
           </div>
         </div>
-        <div className="container relative flex flex-col  lg:pt-32 lg:pb-32 items-center gap-4 bg-gradient-to-b from-blue-300 to-purple-500 rounded-[2rem] py-8 px-4 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12">
+        <div className=" relative flex flex-col  lg:pt-32 lg:pb-32 items-center gap-2 bg-gradient-to-b from-blue-300 to-purple-500 rounded-[2rem] py-8 mx-3 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12">
           <div className="text-center lg:pl-44 -lg:text-left">
             <img
               src="/img/Vector.svg"

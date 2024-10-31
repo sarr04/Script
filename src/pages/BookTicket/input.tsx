@@ -1,17 +1,26 @@
 import { useState } from "react";
 import NavBar from "../../components/NavBar";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const input = () => {
-  const [inputValue, setInputValue] = useState("");
+type Inputs = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: number;
+  jobTitle: string;
+  fieldOfStudy: string;
+  instagramHandle: string;
+  linkedInHandle: string;
+};
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
-  };
+const Input = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
 
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     console.log(inputValue);
-  //   };
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <div>
@@ -20,16 +29,92 @@ const input = () => {
         imageSrc="/img/Logoblue.svg"
       />
 
-      <label htmlFor="textInput"></label>
-      <input
-        id=""
-        type="text"
-        value={inputValue}
-        onChange={handleChange}
-        className="border-b p-2 rounded"
-      />
+      <div className="flex  items-center">
+        <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mb-6">
+          <span className="text-4xl text-gray-500"></span>
+        </div>
+
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full max-w-md space-y-4"
+        >
+          <input
+            placeholder="First Name"
+            {...register("firstName", { required: true })}
+            className="w-full p-2 border rounded"
+          />
+
+          {errors.firstName && (
+            <span className="text-red-500">First name is required</span>
+          )}
+
+          <input
+            placeholder="Last Name"
+            {...register("lastName", { required: true })}
+            className="w-full p-2 border rounded"
+          />
+          {errors.lastName && (
+            <span className="text-red-500">Last name is required</span>
+          )}
+
+          <input
+            placeholder="E-mail"
+            type="email"
+            {...register("email", { required: true })}
+            className="w-full p-2 border rounded"
+          />
+          {errors.email && (
+            <span className="text-red-500">Email is required</span>
+          )}
+
+          <div className="flex">
+            <select className="w-1/4 p-2 border rounded-l">
+              <option value="+963">+963</option>
+            </select>
+            <input
+              placeholder="Phone Number"
+              {...register("phoneNumber", { required: true })}
+              className="w-3/4 p-2 border rounded-r"
+            />
+          </div>
+          {errors.phoneNumber && (
+            <span className="text-red-500">Phone number is required</span>
+          )}
+
+          <input
+            placeholder="Job Title"
+            {...register("jobTitle")}
+            className="w-full p-2 border rounded"
+          />
+
+          <input
+            placeholder="Field of Study"
+            {...register("fieldOfStudy")}
+            className="w-full p-2 border rounded"
+          />
+
+          <input
+            placeholder="Instagram Handle"
+            {...register("instagramHandle")}
+            className="w-full p-2 border rounded"
+          />
+
+          <input
+            placeholder="LinkedIn Handle"
+            {...register("linkedInHandle")}
+            className="w-full p-2 border rounded"
+          />
+
+          <button
+            type="submit"
+            className="w-full p-3 mt-4 text-white font-bold rounded bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600"
+          >
+            NEXT
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default input;
+export default Input;

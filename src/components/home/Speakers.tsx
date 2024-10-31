@@ -15,69 +15,71 @@ export default function Speakers(buttonClass) {
             Meet the visionaries shaping the <br /> future of social media.
           </h4>
         </div>
-        <div className=" bg-gradient-to-r from-orange-400 to-pink-500 p-4 rounded-3xl relative z-20">
-          <div className="grid lg:grid-cols-4 grid-cols-2  gap-x-12 items-center justify-center ">
+        <div className="bg-gradient-to-r from-orange-400 to-pink-500 p-4 rounded-3xl relative z-20">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-x-12 items-center justify-center">
             <div className="flex flex-col items-center">
-              <img className="inline " src="../public/img/a.png" />
-              <div className="translate-y-[-30%] ">
+              <img className="inline" src="../public/img/a.png" />
+              <div className="translate-y-[-30%]">
                 <Socials name="krisatin" work="influencer" />
               </div>
             </div>
 
-            <div className="flex flex-col   items-center">
+            <div className="flex flex-col items-center">
               <img src="../public/img/b.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Jerome Bell" work="influencer" />
               </div>
             </div>
-            <div className="flex flex-col  items-center">
+            <div className="flex flex-col items-center">
               <img src="../public/img/c.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Jacob Jones" work="influencer" />
               </div>
             </div>
-            <div className="flex flex-col  items-center">
+            <div className="flex flex-col items-center">
               <img src="../public/img/d.png" />
-              <div className="translate-y-[-30%] ">
-                <Socials name="Cameron Wil " work="influencer" />
+              <div className="translate-y-[-30%]">
+                <Socials name="Cameron Wil" work="influencer" />
               </div>
             </div>
-            <div className="hidden md:block lg:flex-col  lg:items-center">
+
+            <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/e.png" />
-              <div className="translate-y-[-30%]   ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Devon Lane" work="influencer" />
               </div>
             </div>
-            <div className=" hidden md:block lg:flex-col lg:items-center">
+            <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/f.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Ronald Richards" work="influencer" />
               </div>
             </div>
-            <div className="hidden md:block lg:flex-col lg:items-center">
+            <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/g.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Jane Cooper" work="influencer" />
               </div>
             </div>
-            <div className="hidden md:block lg:flex-col lg:items-center">
+            <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/h.png" />
-              <div className="translate-y-[-30%] ">
+              <div className="translate-y-[-30%]">
                 <Socials name="Marvin McKinney" work="influencer" />
               </div>
             </div>
           </div>
-          <div className="flex justify-center ">
-            {/* <button className="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-gray-500  text-white border border-white rounded-2xl  px-12 py-2 mb-8">
+        </div>
+
+        <div className="flex justify-center ">
+          {/* <button className="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-gray-500  text-white border border-white rounded-2xl  px-12 py-2 mb-8">
               View All
             </button> */}
-            <ScriptBtn
-              customStyles={`bg-transparent border-2  bg-white/10  backdrop-blur-[150px] border-white text-white ${buttonClass}`}
-              className="mb-8"
-            >
-              <a href="./ScriptBtn.tsx">View All</a>
-            </ScriptBtn>
-          </div>
+          <ScriptBtn
+            customStyles={`bg-transparent border-2  bg-white/10  backdrop-blur-[150px] border-white text-white ${buttonClass}`}
+            className="mb-8"
+          >
+            <a href="./ScriptBtn.tsx">View All</a>
+          </ScriptBtn>
         </div>
       </div>
     </div>
