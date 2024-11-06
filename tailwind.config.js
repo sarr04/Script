@@ -9,6 +9,9 @@ module.exports = {
         primarybold: ["Bold"],
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 };

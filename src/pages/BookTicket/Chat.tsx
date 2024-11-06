@@ -1,4 +1,5 @@
 import NavBar from "../../components/NavBar";
+
 const Chat = () => {
   return (
     <div>

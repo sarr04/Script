@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import NavBar from "../components/NavBar";
 import ScriptBtn from "../components/ScriptBtn";
 import Socials from "../components/Socials";
 import { Link } from "react-router-dom";
+import Footer from "../components/home/Footer";
+import React from "react";
+
+import Hover from "../components/Hover";
 
 const About = (buttonClass) => {
-  // Declare state hooks inside the component
-  const [hoverNetworking, setHoverNetworking] = useState(false);
-  const [hoverExclusiveContent, setHoverExclusiveContent] = useState(false);
-  const [hoverIndustryExperts, setHoverIndustryExperts] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+  const [hoverNetworking, setHoverNetworking] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <section className="min-h-screen">
@@ -16,18 +25,18 @@ const About = (buttonClass) => {
         buttonClass="bg-gradient-to-b from-blue-300 to-purple-500 hover:bg-blue-700"
         imageSrc="/img/Logoblue.svg"
       />
-      <div className="ml-11 mr-11">
-        <div className="lg:py-20 mt-5 p-10 bg-gradient-to-b from-blue-300 to-purple-500 rounded-lg w-full text-white">
+      <div className="ml-24 mr-24">
+        <div className="lg:py-20 mt-5 p-10 bg-gradient-to-b from-blue-300 to-purple-500 rounded-3xl lg:w-full text-white">
           <div className="text-center">
-            <h1 className="font-bold text-lg tracking-widest">
+            <h1 className="font-bold lg:text-2xl tracking-widest">
               ABOUT SCRIPT CONFERENCE
             </h1>
-            <p className="my-4">
-              Bringing together the brightest minds in social media to inspire,
-              connect, and drive change
-            </p>
+            <h3 className="my-4 lg:text-3xl">
+              Bringing together the brightest minds in social media to <br />{" "}
+              inspire, connect, and drive change
+            </h3>
             <ScriptBtn
-              className={`border border-white mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
+              className={`border inline-block border-white mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
             >
               <a href="/BookATicket">Book A Ticket</a>
             </ScriptBtn>
@@ -35,201 +44,189 @@ const About = (buttonClass) => {
         </div>
 
         <div className="text-center">
-          <h1 className="bg-white my-6 font-bold text-xl">
+          <h1 className="bg-white my-6 font-bold lg:text-5xl">
             OUR MISSION & VISION
           </h1>
-          <div className="text-center">
-            <div>
-              <h1 className=" text-center font-bold text-3xl lg:text-black text-purple-700">
-                Our Mission
-              </h1>
-              <div className="lg:flex lg:justify-between items-center mx-5 lg:gap-80">
-                <p>
-                  At Script we believe in empowering influencers <br />
-                  to create meaningful connections and elevate <br />
-                  their platforms with the latest trends and tools
-                </p>
 
-                <div className="flex items-center justify-between w-full p-4 ">
-                  {/* <img
-                    className="hidden md:block absolute right-7 pt-24 w-[200px]"
-                    src="/bookholding.png"
-                  /> */}
-                </div>
-              </div>
-            </div>
-            <div className="">
-              <div className="lg:flex lg:justify-between items-center  lg:gap-80 text-center">
-                <h1 className="font-bold text-3xl lg:text-black text-purple-700 text-center">
-                  Our Vision
+          <div className="container my-10 overflow-visible">
+            <div className="flex flex-col lg:flex-row lg:items-center mx-5 lg:gap-10">
+              <div className="flex flex-col lg:w-1/2">
+                <h1 className="font-bold text-3xl lg:text-black text-purple-700 lg:text-left text-center mb-2">
+                  Our Mission
                 </h1>
-                <p className="text-center ">
-                  At Script our vision is to create a global <br />
-                  community where influencers, creators, and <br />
-                  brands can come together to inspire, innovate, <br />
-                  and drive meaningful change in the digital landscape.
-                </p>
+                <h3 className="text-2xl lg:text-left">
+                  At Script, we believe in empowering <br /> influencers to
+                  create meaningful connections <br /> and elevate their
+                  platforms with the latest trends and tools.
+                </h3>
               </div>
-              <div className="grid grid-cols-2 gap-4 p-4">
-                {/* <img className="hidden md:block" src="/eyee.png" /> */}
+
+              <div className="relative flex lg:w-1/2 justify-center lg:justify-end">
+                <img
+                  src="/img/1.png"
+                  className=" block:md relative w-[300px] lg:w-full scale-125  hidden md:flex"
+                />
+                <img
+                  src="/img/shap-06.png"
+                  className="absolute  top-1/2 translate-y-[-50%] left-[50%] translate-x-[-50%] w-[250px] lg:w-[350px]  hidden md:flex"
+                />
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div>
-        <div className="text-center">
-          <h1 className="font-bold text-3xl pt-12">WHO ATTENDS SCRIPT?</h1>
-          <h4>
-            SCRIPT connects influencers, content creators, and industry
-            professionals from all over Syria. Attendees are passionate about
-            social media, eager to grow, and ready to make an impact.
-          </h4>
-          <h3 className="font-bold">Here's who you'll meet at SCRIPT:</h3>
+          <div className="container my-10 overflow-visible">
+            <div className="flex flex-col lg:flex-row items-center mx-5 lg:gap-10">
+              <div className="relative flex lg:w-1/2 justify-center lg:justify-start ">
+                <img
+                  src="img/2.png"
+                  className=" block:md relative w-[300px] lg:w-full scale-125  hidden md:flex"
+                />
+                <img
+                  src="/halfcircle.png"
+                  className="absolute  top-1/2 translate-y-[-50%] left-[50%] translate-x-[-50%] w-[250px] lg:w-[350px]  hidden md:flex"
+                />
+              </div>
+              <div className="flex-grow-0 basis-1/2">
+                <h1 className="font-bold text-3xl lg:text-black text-purple-700  lg:text-left">
+                  Our Vision
+                </h1>
+                <p className="lg:text-left   text-2xl ">
+                  At Script, our vision is to create a global community where
+                  influencers, creators, and brands can come together to
+                  inspire, innovate, and drive meaningful change in the digital
+                  landscape.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="text-center pt-5">
         <h1 className="font-bold text-2xl pb-9">WHY SCRIPT?</h1>
 
-        <div className="lg:flex lg:justify-center grid grid-rows-3 lg:gap-4 m-5">
-          <div
-            className="relative text-center lg:px-15 bg-white text-black hover:bg-gradient-to-r from-orange-400 to-pink-500 border border-black font-bold hover:text-white p-8 lg:w-[200px] lg:h-40 rounded-xl flex justify-between items-center"
-            onMouseEnter={() => setHoverNetworking(true)}
-            onMouseLeave={() => setHoverNetworking(false)}
-          >
-            Networking
-            <h2 className="font-bold text-3xl text-black">+</h2>
-          </div>
-
-          <div
-            className="relative text-center lg:px-15 bg-white text-black hover:bg-gradient-to-b from-blue-300 to-purple-500 border border-black font-bold hover:text-white p-8 lg:w-[200px] lg:h-40 rounded-xl flex justify-between items-center"
-            onMouseEnter={() => setHoverExclusiveContent(true)}
-            onMouseLeave={() => setHoverExclusiveContent(false)}
-          >
-            Exclusive Content
-            <h2 className="font-bold text-3xl text-black">+</h2>
-          </div>
-
-          <div
-            className="relative text-center lg:px-15 bg-white text-black hover:bg-gradient-to-b from-yellow-300 to-orange-400 border border-black font-bold hover:text-white p-8 lg:w-[200px] lg:h-40 rounded-xl flex justify-between items-center"
-            onMouseEnter={() => setHoverIndustryExperts(true)}
-            onMouseLeave={() => setHoverIndustryExperts(false)}
-          >
-            Industry Experts
-            <h2 className="font-bold text-3xl text-black">+</h2>
-          </div>
-        </div>
-
-        {hoverNetworking && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 text-center mt-4 text-gray-800 bg-white p-2">
-            Connect with professionals in the industry.
-          </div>
-        )}
-        {hoverExclusiveContent && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 mt-4 text-gray-800 bg-white p-2 rounded">
-            Access premium articles and insights.
-          </div>
-        )}
-        {hoverIndustryExperts && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 mt-4 text-gray-800 bg-white p-2 rounded">
-            Learn from experienced industry leaders.
-          </div>
-        )}
+        {/* <div className="relative lg:flex lg:justify-center grid grid-rows-3 lg:gap-4 m-5"></div> */}
       </div>
+
+      <div className="flex justify-center items-center space-x-3 ">
+        <Hover
+          buttonText="NetWorking"
+          hoverGradient="from-purple-400 to-blue-500"
+          text="This is text for button 1"
+          isOpen={openIndex === 0}
+          onToggle={() => handleToggle(0)}
+        />
+        <Hover
+          buttonText="Exclusive Content"
+          hoverGradient="from-green-400 to-blue-500"
+          text="This is text for button 2"
+          isOpen={openIndex === 1}
+          onToggle={() => handleToggle(1)}
+        />
+        <Hover
+          buttonText="industry Experts"
+          hoverGradient="from-pink-400 to-purple-500"
+          text="This is text for button 3"
+          isOpen={openIndex === 2}
+          onToggle={() => handleToggle(2)}
+        />
+      </div>
+
+      <div className="px-4">
+        <div className="text-center">
+          <h1 className="font-bold text-3xl pt-12">WHO ATTENDS SCRIPT?</h1>
+          <h4 className="text-xl">
+            SCRIPT connects influencers, content creators, and industry <br />
+            professionals from all over Syria. Attendees are passionate about
+            <br />
+            social media, eager to grow, and ready to make an impact.
+            <br />
+          </h4>
+          <h3 className="font-bold text-xl">
+            Here's who you'll meet at SCRIPT:
+          </h3>
+        </div>
+      </div>
+
       <div className="lg:mx-14 lg:p-5 mt-16  rounded-3xl bg-gradient-to-b from-blue-300 to-purple-500">
-        <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-12 items-center justify-center">
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-x-12 pt-4 lg:pt-11 items-center justify-center">
           <div className="flex flex-col items-center">
             <img className="inline" src="../public/img/a.png" />
             <div className="translate-y-[-30%]">
-              <Socials name="Kristin" work="influencer" />
+              <Socials
+                name="Kristin"
+                work="influencer"
+                followers="500k Followers"
+              />
             </div>
           </div>
           <div className="flex flex-col items-center">
             <img src="../public/img/b.png" />
             <div className="translate-y-[-30%]">
-              <Socials name="Jerome Bell" work="influencer" />
+              <Socials
+                name="Jerome Bell"
+                work="influencer"
+                followers="500k Followers"
+              />
             </div>
           </div>
-          <div className="hidden md:block flex-col items-center">
+          <div className="hidden md:flex flex-col items-center flex-none ">
             <img src="../public/img/c.png" />
-            <div className="translate-y-[-30%]">
-              <Socials name="Jacob Jones" work="influencer" />
+            <div className="translate-y-[-30%] ">
+              <Socials
+                name="Jacob Jones"
+                work="influencer"
+                followers="500k Followers"
+              />
             </div>
           </div>
-          <div className="hidden md:block flex-col items-center">
+          <div className="hidden md:flex flex-col items-center flex-none">
             <img src="../public/img/d.png" />
-            <div className="translate-y-[-30%]">
-              <Socials name="Cameron Wil" work="influencer" />
+            <div className="translate-y-[-30%]  ">
+              <Socials
+                name="Cameron Wil"
+                work="influencer"
+                followers="500k Followers"
+              />
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center lg:mt-8 pb-4">
           <ScriptBtn
-            className={`border border-white mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
+            className={`border border-white lg:mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
           >
             <a href="/BookATicket">View More</a>
           </ScriptBtn>
         </div>
       </div>
-      <div className="mt-9 text-5xl font-bold text-center">DAILY SCHEDULE </div>
+      <div className="mt-9 mb-4 text-5xl font-bold text-center">
+        DAILY SCHEDULE{" "}
+      </div>
       <div className="grid-cols-2">
-        <div className="">
-          <h4 className="font-bold">
+        <div className="px-4">
+          <h4 className="font-bold text-center">
             Welcome to the Script Conference! Here’s What You Can Expect
           </h4>
-          <p>
+          <p className="text-center">
             Join us for an immersive three-day event where industry leaders,
+            <br />
             influencers, and creators come together to explore the future of
+            <br />
             digital influence. Each day is packed with insightful sessions,
+            <br />
             inspiring keynotes, and opportunities to connect with like-minded
+            <br />
             professionals.
           </p>
-          <ScriptBtn
-            className={`text-white bg-gradient-to-b from-blue-300 to-purple-500 mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
-          >
-            Download Schedule
-          </ScriptBtn>
-        </div>
-        <div>
-          <div className="mt-11 mb-16 grid grid-cols-3  gap-4 justify-items-center lg:flex lg:flex-row lg:justify-center lg:space-x-[70px]">
-            <img src="/img/Logxo.png" className="h-10 mx-2" />
-            <img src="/img/Loxgo.png" className="h-10 mx-2" />
-            <img src="/img/paypal.png" className="h-10 mx-2" />
-            <img src="/img/visa.png" className="h-10 mx-2" />
-            <img src="/oo.png" className="h-10 mx-2" />
-            <img src="/img/apple.png" className="h-10 mx-2" />
+          <div className="flex justify-center">
+            <ScriptBtn
+              className={`text-white inline-block bg-gradient-to-b from-blue-300 to-purple-500 mt-9 bg-transparent backdrop-blur-[150px] mb-5 rounded-3xl text-center ${buttonClass}`}
+            >
+              Download Schedule
+            </ScriptBtn>
           </div>
         </div>
-        <div className=" relative flex flex-col  lg:pt-32 lg:pb-32 items-center gap-2 bg-gradient-to-b from-blue-300 to-purple-500 rounded-[2rem] py-8 mx-3 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12">
-          <div className="text-center lg:pl-44 -lg:text-left">
-            <img
-              src="/img/Vector.svg"
-              className="w-[60%] lg:w-full mx-auto lg:mx-0"
-            />
-            <p className="text-white text-sm lg:text-base lg:pt-2">
-              Syrian Content Creators Conference
-            </p>
-          </div>
-
-          <div className="text-center lg:pr-44">
-            <h3 className="text-white font-bold text-lg lg:text-5xl">
-              Follow Us
-            </h3>
-            <div className="flex space-x-3 pt-3 justify-center">
-              <a href="https://www.instagram.com/">
-                <img className="w-6 lg:w-8" src="/img/insta.svg" />
-              </a>
-              <a href="">
-                <img className="w-6 lg:w-8" src="/img/fb.svg" />
-              </a>
-              <a href="">
-                <img className="w-6 lg:w-8" src="/img/link.svg" />
-              </a>
-            </div>
-          </div>
-        </div>
+        <Footer color="purple" />
       </div>
     </section>
   );

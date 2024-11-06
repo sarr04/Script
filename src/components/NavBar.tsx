@@ -14,7 +14,7 @@ function NavBar({ buttonClass, imageSrc }) {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <img className="lg:pt-4 w-15 pr-10" src={imageSrc} alt="Logo" />
+            <img className="lg:pt-4 w-15 pr-10" src={imageSrc} />
           </Link>
 
           <nav className="hidden lg:flex space-x-12 text-xl font-bold">

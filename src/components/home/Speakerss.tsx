@@ -1,6 +1,17 @@
 import Socials from "../Socials";
 import ScriptBtn from "../ScriptBtn";
-export default function Speakers(buttonClass) {
+
+const colors = {
+  pin: "bg-gradient-to-r from-orange-400 to-pink-500",
+  blu: "bg-gradient-to-b from-blue-300 to-purple-500",
+};
+
+export default function Speakerss(props: {
+  buttonClass: string;
+  color: keyof typeof colors;
+}) {
+  const { buttonClass, color } = props;
+
   return (
     <div className="pl-12 pr-12  overflow-hidden relative z-10 ">
       <div className="block justify-center items-center min-h-screen ">
@@ -15,56 +26,89 @@ export default function Speakers(buttonClass) {
             Meet the visionaries shaping the <br /> future of social media.
           </h4>
         </div>
-        <div className="bg-gradient-to-r from-orange-400 to-pink-500 p-4 rounded-3xl relative z-20">
+
+        <div className={`p-4 rounded-3xl relative z-20 ${colors[color]}`}>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-x-12 items-center justify-center">
             <div className="flex flex-col items-center">
               <img className="inline" src="../public/img/a.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="krisatin" work="influencer" />
+                <Socials
+                  name="krisatin"
+                  work="influencer"
+                  followers="500k Followers"
+                />
               </div>
             </div>
 
             <div className="flex flex-col items-center">
               <img src="../public/img/b.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Jerome Bell" work="influencer" />
+                <Socials
+                  name="Jerome Bell"
+                  work="influencer"
+                  followers="20k Followers"
+                />
               </div>
             </div>
             <div className="flex flex-col items-center">
               <img src="../public/img/c.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Jacob Jones" work="influencer" />
+                <Socials
+                  name="Jacob Jones"
+                  work="influencer"
+                  followers="500k Followers"
+                />
               </div>
             </div>
             <div className="flex flex-col items-center">
               <img src="../public/img/d.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Cameron Wil" work="influencer" />
+                <Socials
+                  name="Cameron Wil"
+                  work="influencer"
+                  followers="200k Followers"
+                />
               </div>
             </div>
 
             <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/e.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Devon Lane" work="influencer" />
+                <Socials
+                  name="Devon Lane"
+                  work="influencer"
+                  followers="500k Followers"
+                />
               </div>
             </div>
             <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/f.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Ronald Richards" work="influencer" />
+                <Socials
+                  name="Ronald Richards"
+                  work="influencer"
+                  followers="500k Followers"
+                />
               </div>
             </div>
             <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/g.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Jane Cooper" work="influencer" />
+                <Socials
+                  name="Jane Cooper"
+                  work="influencer"
+                  followers="500k Followers"
+                />
               </div>
             </div>
             <div className="hidden md:flex flex-col items-center flex-none">
               <img src="../public/img/h.png" />
               <div className="translate-y-[-30%]">
-                <Socials name="Marvin McKinney" work="influencer" />
+                <Socials
+                  name="Marvin McKinney"
+                  work="influencer"
+                  followers="400k Followers"
+                />
               </div>
             </div>
           </div>

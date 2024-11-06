@@ -16,14 +16,12 @@ export default function ScriptBtn({
   customStyles = "",
 }: Props) {
   return (
-    <div className={className}>
-      <button
-        type={type}
-        onClick={onClick}
-        className={`lg:px-20 lg:py-4 py-3 px-8 rounded-[2rem] text-white text-xl font-bold ${customStyles}`}
-      >
-        {children}
-      </button>
-    </div>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`lg:px-8 lg:py-3 py-2 px-6 rounded-[2rem] text-white text-xl font-bold ${className} ${customStyles}`}
+    >
+      {children}
+    </button>
   );
 }

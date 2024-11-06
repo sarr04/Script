@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Speakers from "./components/home/Speakers";
+import Speakers from "./components/home/Speakerss";
 import Schedule from "./pages/Schedule";
 import BookATicket from "./pages/BookATicket";
 import Chat from "./pages/BookTicket/Chat";

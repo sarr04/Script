@@ -8,11 +8,13 @@ export default function Join(buttonClass) {
             <h2 className="font-bold text-3xl text-center mt-5">
               READY TO JOIN SCRIPT?
             </h2>
-            <p className="text-center mt-2">
-              Don’t miss out on the opportunity to connect,
-              <br /> learn, and grow with the top influencers
-              <br /> and experts in the industry.
-            </p>
+            <div className="flex justify-center">
+              <p className="text-left  mt-2">
+                Don’t miss out on the opportunity to connect,
+                <br /> learn, and grow with the top influencers
+                <br /> and experts in the industry.
+              </p>
+            </div>
 
             <div className="flex justify-center mt-8">
               <ScriptBtn
@@ -25,7 +27,7 @@ export default function Join(buttonClass) {
 
           <div className="container lg:w-1/2 flex justify-center mt-6 lg:mt-0">
             <img
-              className="hidden md:block lg:w-[465px]"
+              className="hidden md:block lg:w-[380px]"
               src="../public/img/00.png"
             />
           </div>
