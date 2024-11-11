@@ -4,7 +4,7 @@ const Chat = () => {
   return (
     <div>
       <NavBar
-        buttonClass="bg-gradient-to-r from-orange-400 to-pink-500  hover:bg-blue-700"
+        buttonClass="bg-custom hover:bg-blue-700"
         imageSrc="/img/Logo.png"
       />
       <div>
@@ -12,16 +12,16 @@ const Chat = () => {
           <img className="w-full relative" src="/brandticket.png" />
 
           <img
-            className=" absolute bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl p-5 "
+            className=" absolute bg-custom rounded-3xl p-5 "
             src="/img/whatsapp.svg"
           />
-          <h3 className=" absolute bottom-8 font-bold text-center">
+          <h3 className=" absolute bottom-4 text-2xl font-bold text-center">
             Chat with us on WhatsApp to confirm your booking <br />
             and make payment instantly!
           </h3>
         </div>
         <div className="flex items-center justify-center ">
-          <button className="absolute text-white font-bold px-20  py-4 bottom-20 bg-gradient-to-r from-orange-400 to-pink-500 rounded-xl">
+          <button className="absolute text-white font-bold px-20 text-2xl py-4 bottom-20 bg-custom rounded-xl">
             <a href="https://www.whatsapp.com">Open Whatsapp</a>
           </button>
         </div>

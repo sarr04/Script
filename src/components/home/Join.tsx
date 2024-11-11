@@ -9,16 +9,16 @@ export default function Join(buttonClass) {
               READY TO JOIN SCRIPT?
             </h2>
             <div className="flex justify-center">
-              <p className="text-left  mt-2">
+              <p className="lg:text-left text-center mt-2">
                 Don’t miss out on the opportunity to connect,
                 <br /> learn, and grow with the top influencers
                 <br /> and experts in the industry.
               </p>
             </div>
 
-            <div className="flex justify-center mt-8">
+            <div className="flex lg:justify-start lg:ml-44 justify-center mt-6 ">
               <ScriptBtn
-                className={`bg-gradient-to-r from-orange-400 to-pink-500 text-white font-semibold py-2 px-6 rounded-3xl ${buttonClass}`}
+                className={`bg-custom text-white font-semibold  rounded-3xl ${buttonClass}`}
               >
                 <a href="/BookATicket">Book A Ticket</a>
               </ScriptBtn>

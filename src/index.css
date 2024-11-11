@@ -3,17 +3,23 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu-LightItalic"),
-    url("./assests/fonts/Ubuntu-LightItalic.ttf") format("truetype");
+  font-family: "Acumin";
+  src: url("./assets/fonts/Acumin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-@font-face {
-  font-family: "Medium";
-  src: local("Ubuntu-Medium"),
-    url("./assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+@layer base {
+  body {
+    @apply font-custom;
+  }
 }
-@font-face {
-  font-family: "Bold";
-  src: local("Ubuntu-Bold"),
-    url("./assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+.bg-custom {
+  background-image: url("/gradient1.png");
+  background-size: cover;
+  background-position: center;
+}
+.bg-custom2 {
+  background-image: url("/gradient2.png");
+  background-size: cover;
+  background-position: center;
 }

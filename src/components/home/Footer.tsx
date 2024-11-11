@@ -1,6 +1,6 @@
 const colors = {
-  orange: "from-orange-400 to-pink-500",
-  purple: "from-blue-300 to-purple-500",
+  orange: "bg-custom",
+  purple: "bg-custom2",
 };
 
 type FooterProps = {
@@ -11,22 +11,22 @@ export default function Footer(props: FooterProps) {
   return (
     <footer>
       <div
-        className={`container relative flex flex-col lg:pt-32 lg:pb-32 items-center gap-4 bg-gradient-to-r ${
+        className={`container relative flex flex-col lg:pt-32 pb-24 pt-24 lg:pb-32 items-center gap-4 bg-gradient-to-r ${
           colors[props.color]
         } rounded-[2rem] py-8 px-4 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12`}
       >
         <div className="text-center lg:pl-44 lg:text-left">
           <img
             src="/img/Vector.svg"
-            className="w-[60%] lg:w-full mx-auto lg:mx-0"
+            className="w-[60%] lg:w-[80%] mx-auto lg:mx-0"
           />
-          <p className="text-white text-sm lg:text-base lg:pt-2">
+          <p className="text-white text-sm lg:text-base lg:pt-2 pb-7">
             Syrian Content Creators Conference
           </p>
         </div>
 
         <div className="text-center lg:pr-44">
-          <h3 className="text-white font-bold text-lg lg:text-5xl">
+          <h3 className="text-white font-bold text-lg lg:text-3xl">
             Follow Us
           </h3>
           <div className="flex space-x-3 pt-3 justify-center">
@@ -41,11 +41,6 @@ export default function Footer(props: FooterProps) {
             </a>
           </div>
         </div>
-
-        <img
-          src="/img/ll.png"
-          className="absolute bottom-0 w-full max-w-[650px] lg:bottom-0 -z-10 opacity-20"
-        />
       </div>
     </footer>
   );

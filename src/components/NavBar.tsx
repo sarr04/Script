@@ -1,3 +1,4 @@
+import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ScriptBtn from "./ScriptBtn";
@@ -14,12 +15,15 @@ function NavBar({ buttonClass, imageSrc }) {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <img className="lg:pt-4 w-15 pr-10" src={imageSrc} />
+            <img
+              className="lg:pt-4 lg:h-[50px] h-[25px] pr-10"
+              src={imageSrc}
+            />
           </Link>
 
-          <nav className="hidden lg:flex space-x-12 text-xl font-bold">
+          <nav className="hidden lg:flex space-x-12 text-xl ">
             <Link to="/About">About</Link>
-            <Link to="/Speakers">Speakers</Link>
+            <a href="#spearkers">Speakers</a>
             <Link to="/Schedule">Schedule</Link>
           </nav>
 
@@ -27,20 +31,7 @@ function NavBar({ buttonClass, imageSrc }) {
             className="lg:hidden text-xl focus:outline-none"
             onClick={toggleMobileMenu}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            <RxHamburgerMenu />
           </button>
 
           <div className="hidden lg:flex">
@@ -51,37 +42,56 @@ function NavBar({ buttonClass, imageSrc }) {
         </div>
 
         {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 bg-white shadow-md rounded-lg p-4 flex flex-col divide-y divide-gray-300 text-lg font-bold">
-            <Link
-              to="/About"
+          <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 text-lg font-bold">
+            <button
+              className="absolute top-4 right-4 text-xl"
               onClick={toggleMobileMenu}
-              className="py-2 hover:bg-gray-100"
             >
-              About
-            </Link>
-            <Link
-              to="/Speakers"
-              onClick={toggleMobileMenu}
-              className="py-2 hover:bg-gray-100"
-            >
-              Speakers
-            </Link>
-            <Link
-              to="/Schedule"
-              onClick={toggleMobileMenu}
-              className="py-2 hover:bg-gray-100"
-            >
-              Schedule
-            </Link>
-            <div className="pt-2">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <nav className="flex flex-col items-center space-y-4">
+              <Link
+                to="/About"
+                onClick={toggleMobileMenu}
+                className="hover:bg-gray-100 p-2 rounded"
+              >
+                About
+              </Link>
+              <Link
+                to="/Speakers"
+                onClick={toggleMobileMenu}
+                className="hover:bg-gray-100 p-2 rounded"
+              >
+                Speakers
+              </Link>
+              <Link
+                to="/Schedule"
+                onClick={toggleMobileMenu}
+                className="hover:bg-gray-100 p-2 rounded"
+              >
+                Schedule
+              </Link>
               <ScriptBtn
-                className={`rounded-[2rem] text-white w-full ${buttonClass}`}
+                className={`rounded-[2rem] text-white w-full mt-4 ${buttonClass}`}
                 onClick={toggleMobileMenu}
               >
                 <Link to="/BookATicket">Book A Ticket</Link>
               </ScriptBtn>
-            </div>
-          </nav>
+            </nav>
+          </div>
         )}
       </div>
     </header>

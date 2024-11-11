@@ -1,78 +1,108 @@
 import Socials from "../Socials";
 import ScriptBtn from "../ScriptBtn";
+import React from "react";
+import "./style.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 const colors = {
-  pin: "bg-gradient-to-r from-orange-400 to-pink-500",
-  blu: "bg-gradient-to-b from-blue-300 to-purple-500",
+  pin: "bg-custom",
+  blu: "bg-custom2",
 };
 
-export default function Speakerss(props: {
+export default function Speakers(props: {
   buttonClass: string;
   color: keyof typeof colors;
 }) {
   const { buttonClass, color } = props;
 
   return (
-    <div className="pl-12 pr-12  overflow-hidden relative z-10 ">
-      <div className="block justify-center items-center min-h-screen ">
-        <div className="text-black rounded-2xl bg-white h-150 w-170 relative z-20">
-          <h4 className="flex justify-center font-bold items-center text-center pt-10 bg-white ">
-            EVENT CONFERENCE SPEAKERS
-          </h4>
-          <h2 className="flex justify-center items-center font-bold text-4xl text-center">
-            THE SPEAKERS
-          </h2>
-          <h4 className="flex justify-center items-center text-center pb-5">
-            Meet the visionaries shaping the <br /> future of social media.
-          </h4>
-        </div>
+    <div id="spearkers" className="pl-12 pr-12 ">
+      <div className="block justify-center items-center mt-10">
+        <div
+          className={`lg:rounded-[4rem] rounded-[2rem] relative z-20 pt-11 lg:px-5 ${colors[color]}`}
+        >
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/a.png"
+                />
+                <div className="translate-y-[-30%] flex">
+                  <Socials
+                    name="Krisatin"
+                    work="influencer"
+                    followers="500k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
 
-        <div className={`p-4 rounded-3xl relative z-20 ${colors[color]}`}>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 gap-x-12 items-center justify-center">
-            <div className="flex flex-col items-center">
-              <img className="inline" src="../public/img/a.png" />
-              <div className="translate-y-[-30%]">
-                <Socials
-                  name="krisatin"
-                  work="influencer"
-                  followers="500k Followers"
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/b.png"
                 />
+                <div className="translate-y-[-30%] ">
+                  <Socials
+                    name="Jerome Bell"
+                    work="influencer"
+                    followers="20k Followers"
+                  />
+                </div>
               </div>
-            </div>
+            </SwiperSlide>
 
-            <div className="flex flex-col items-center">
-              <img src="../public/img/b.png" />
-              <div className="translate-y-[-30%]">
-                <Socials
-                  name="Jerome Bell"
-                  work="influencer"
-                  followers="20k Followers"
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/c.png"
                 />
+                <div className="translate-y-[-30%]">
+                  <Socials
+                    name="Jacob Jones"
+                    work="influencer"
+                    followers="500k Followers"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <img src="../public/img/c.png" />
-              <div className="translate-y-[-30%]">
-                <Socials
-                  name="Jacob Jones"
-                  work="influencer"
-                  followers="500k Followers"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <img src="../public/img/d.png" />
-              <div className="translate-y-[-30%]">
-                <Socials
-                  name="Cameron Wil"
-                  work="influencer"
-                  followers="200k Followers"
-                />
-              </div>
-            </div>
+            </SwiperSlide>
 
-            <div className="hidden md:flex flex-col items-center flex-none">
-              <img src="../public/img/e.png" />
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/d.png"
+                />
+                <div className="translate-y-[-30%]">
+                  <Socials
+                    name="Cameron Wil"
+                    work="influencer"
+                    followers="200k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/e.png"
+              />
               <div className="translate-y-[-30%]">
                 <Socials
                   name="Devon Lane"
@@ -80,9 +110,13 @@ export default function Speakerss(props: {
                   followers="500k Followers"
                 />
               </div>
-            </div>
-            <div className="hidden md:flex flex-col items-center flex-none">
-              <img src="../public/img/f.png" />
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/f.png"
+              />
               <div className="translate-y-[-30%]">
                 <Socials
                   name="Ronald Richards"
@@ -90,9 +124,13 @@ export default function Speakerss(props: {
                   followers="500k Followers"
                 />
               </div>
-            </div>
-            <div className="hidden md:flex flex-col items-center flex-none">
-              <img src="../public/img/g.png" />
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/g.png"
+              />
               <div className="translate-y-[-30%]">
                 <Socials
                   name="Jane Cooper"
@@ -100,9 +138,13 @@ export default function Speakerss(props: {
                   followers="500k Followers"
                 />
               </div>
-            </div>
-            <div className="hidden md:flex flex-col items-center flex-none">
-              <img src="../public/img/h.png" />
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/h.png"
+              />
               <div className="translate-y-[-30%]">
                 <Socials
                   name="Marvin McKinney"
@@ -110,20 +152,146 @@ export default function Speakerss(props: {
                   followers="400k Followers"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center ">
-          {/* <button className="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-gray-500  text-white border border-white rounded-2xl  px-12 py-2 mb-8">
-              View All
-            </button> */}
-          <ScriptBtn
-            customStyles={`bg-transparent border-2  bg-white/10  backdrop-blur-[150px] border-white text-white ${buttonClass}`}
-            className="mb-8"
+            </SwiperSlide>
+          </Swiper>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
           >
-            <a href="./ScriptBtn.tsx">View All</a>
-          </ScriptBtn>
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/a.png"
+                />
+                <div className="translate-y-[-30%] flex">
+                  <Socials
+                    name="Krisatin"
+                    work="influencer"
+                    followers="500k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/b.png"
+                />
+                <div className="translate-y-[-30%]">
+                  <Socials
+                    name="Jerome Bell"
+                    work="influencer"
+                    followers="20k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/c.png"
+                />
+                <div className="translate-y-[-30%]">
+                  <Socials
+                    name="Jacob Jones"
+                    work="influencer"
+                    followers="500k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col items-center">
+                <img
+                  className="inline lg:w-[200px] w-[150px]"
+                  src="../public/img/d.png"
+                />
+                <div className="translate-y-[-30%]">
+                  <Socials
+                    name="Cameron Wil"
+                    work="influencer"
+                    followers="200k Followers"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/e.png"
+              />
+              <div className="translate-y-[-30%]">
+                <Socials
+                  name="Devon Lane"
+                  work="influencer"
+                  followers="500k Followers"
+                />
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px] "
+                src="../public/img/f.png"
+              />
+              <div className="translate-y-[-30%]">
+                <Socials
+                  name="Ronald Richards"
+                  work="influencer"
+                  followers="500k Followers"
+                />
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/g.png"
+              />
+              <div className="translate-y-[-30%]">
+                <Socials
+                  name="Jane Cooper"
+                  work="influencer"
+                  followers="500k Followers"
+                />
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="hidden md:flex flex-col items-center">
+              <img
+                className="inline lg:w-[200px] w-[150px]"
+                src="../public/img/h.png"
+              />
+              <div className="translate-y-[-30%] ">
+                <Socials
+                  name="Marvin McKinney"
+                  work="influencer"
+                  followers="400k Followers"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+
+          <div className="flex justify-center mt-6 pb-10">
+            <ScriptBtn
+              customStyles={`bg-transparent lg:px-24 px-16 border-2 bg-white/10 backdrop-blur-[150px] border-white text-white ${buttonClass}`}
+              className="mb-8 "
+            >
+              <a href="./ScriptBtn.tsx">View All</a>
+            </ScriptBtn>
+          </div>
         </div>
       </div>
     </div>

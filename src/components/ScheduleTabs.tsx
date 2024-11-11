@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import Speakerss from "./home/Speakerss";
 
-function ScheduleTabs() {
+const colors = {
+  orangee: "bg-custom",
+  bluee: "bg-custom2",
+};
+
+type TabsProps = {
+  color: keyof typeof colors;
+};
+
+function ScheduleTabs(props: TabsProps) {
   const [activeTab, setActiveTab] = useState("morning");
 
   const scheduleContent = {
@@ -85,29 +94,31 @@ function ScheduleTabs() {
     ],
   };
 
+  const colorClass = colors[props.color];
+
   return (
     <div>
       <div className="w-full max-w-lg mx-auto">
-        <div className="flex justify-a bg-gradient-to-r from-orange-400 via-pink-500 to-red-500 rounded-full py-2">
+        <div className={`flex justify-around rounded-3xl py-2 ${colorClass}`}>
           <button
-            className={`px-4 py-2 text-white rounded-full ${
-              activeTab === "morning" ? "bg-white text-black" : ""
+            className={`px-4 py-2  rounded-3xl ${
+              activeTab === "morning" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("morning")}
           >
             Morning time <br /> <span className="font-bold">9:00 - 12:30</span>
           </button>
           <button
-            className={`px-4 py-2 text-white rounded-full ${
-              activeTab === "noon" ? "bg-white text-black" : ""
+            className={`px-4 py-2  rounded-3xl ${
+              activeTab === "noon" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("noon")}
           >
             Noon time <br /> <span className="font-bold">12:30 - 5:00</span>
           </button>
           <button
-            className={`px-4 py-2 text-white rounded-full ${
-              activeTab === "evening" ? "bg-white text-black" : ""
+            className={`px-4 py-2  rounded-3xl ${
+              activeTab === "evening" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("evening")}
           >
@@ -115,16 +126,22 @@ function ScheduleTabs() {
           </button>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-8">
           {scheduleContent[activeTab].map((item, index) => (
-            <div key={index} className="flex items-start mb-8">
-              <div className="relative flex flex-col items-center">
-                <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mb-2">
+            <div key={index} className="flex items-start relative">
+              {index < scheduleContent[activeTab].length - 1 && (
+                <div className="absolute w-[2px] bg-black h-full left-[16px] top-0"></div>
+              )}
+
+              <div className="relative flex flex-col items-center ">
+                <div
+                  className={`w-8 h-8 ${colorClass} text-white rounded-full flex items-center justify-center font-bold mb-2`}
+                >
                   {index + 1}
                 </div>
               </div>
 
-              <div className="ml-4">
+              <div className="ml-4 pb-8">
                 <div className="text-gray-500 text-sm">{item.time}</div>
                 <h3 className="font-bold text-lg">{item.title}</h3>
                 <p className="text-gray-700">{item.description}</p>

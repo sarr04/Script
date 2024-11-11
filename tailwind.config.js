@@ -4,9 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primaryregular: ["Ubuntu"],
-        primarymedium: ["Medium"],
-        primarybold: ["Bold"],
+        custom: ["Acumin", "sans-serif"],
       },
     },
     container: {

@@ -14,7 +14,7 @@ export default function Title(props: TitleProps) {
       <div className="flex hero justify-center items-center">
         <div className="w-full max-w-5xl px-6 lg:px-0">
           <div
-            className={`text-white rounded-[2rem] bg-gradient-to-r from-orange-400 to-pink-500 pb-20 relative z-10${
+            className={`text-white rounded-[2rem]  pb-20 relative z-10${
               colors[props.color]
             }`}
           >

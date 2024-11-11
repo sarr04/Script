@@ -6,7 +6,7 @@ function Plus() {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    setIsClicked(!isClicked); // Toggle the state on click
+    setIsClicked(!isClicked);
   };
 
   return (

@@ -19,7 +19,7 @@ export default function ScriptBtn({
     <button
       type={type}
       onClick={onClick}
-      className={`lg:px-8 lg:py-3 py-2 px-6 rounded-[2rem] text-white text-xl font-bold ${className} ${customStyles}`}
+      className={`lg:px-12 lg:py-3 py-2 px-16 rounded-[2rem] text-white text-base font-bold ${className} ${customStyles}`}
     >
       {children}
     </button>

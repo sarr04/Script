@@ -1,6 +1,6 @@
 export default function Box() {
   return (
-    <div className="  position absolute  bg-gradient-to-r from-orange-400 to-pink-500 ">
+    <div className="  position absolute  bg-custom ">
       <img
         className="h-70 w-70  ml-32 rounded-full"
         src="../public/img/22.png "
