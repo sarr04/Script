@@ -3,14 +3,16 @@ import NavBar from "../components/NavBar";
 import ScheduleTabs from "../components/ScheduleTabs";
 import ScriptBtn from "../components/ScriptBtn";
 import Speakerss from "../components/home/Speakerss";
+
 const Schedule = (buttonClass) => {
   return (
     <div>
       <NavBar
-        buttonClass="bg-custom  hover:bg-blue-700"
+        buttonClass="bg-custom hover:bg-blue-700"
         imageSrc="/img/Logo.png"
       />
-      <div className="flex  justify-center items-center">
+
+      <div className="container mx-auto flex justify-center items-center">
         <div className="w-full max-w-5xl px-6 lg:px-0">
           <div className="text-white rounded-[2rem] bg-custom pb-20 relative z-10">
             <h2 className="text-white justify-center text-center font-bold text-3xl tracking-widest pb-3 pt-12">
@@ -27,7 +29,7 @@ const Schedule = (buttonClass) => {
             </div>
             <div className="flex justify-center items-center">
               <ScriptBtn
-                className={`m-4 border  border-white rounded-[2rem] ${buttonClass}`}
+                className={`m-4 border border-white rounded-[2rem] ${buttonClass}`}
               >
                 <a href="/BookATicket">Download Schedule</a>
               </ScriptBtn>
@@ -35,18 +37,20 @@ const Schedule = (buttonClass) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+
+      <div className="container mx-auto flex justify-center items-center">
         <h1 className="lg:text-3xl font-bold lg:mt-28 lg:mb-8 text-2xl mt-7">
           SCRIPT SCHEDULE
         </h1>
       </div>
-      <div className="lg:mb-12">
-        <div className="lg:flex px-8 lg:flex-none container mx-auto mt-6 lg:space-x-48 lg:justify-between">
-          <div className="justify center ">
-            <h1 className="lg:text-3xl text-center lg:text-left ">
+
+      <div className="container mx-auto lg:mb-12">
+        <div className="lg:flex px-8 lg:flex-none mt-6 lg:space-x-48 lg:justify-between">
+          <div className="justify-center">
+            <h1 className="lg:text-3xl text-center lg:text-left">
               Here's What You Can Expect:
             </h1>
-            <p className="lg:text-center text-left container ">
+            <p className="lg:text-center text-left">
               Join us for an immersive three-day event where industry leaders,
               influencers, and creators come together to explore the future of
               digital influence. Each day is packed with insightful sessions,
@@ -55,16 +59,16 @@ const Schedule = (buttonClass) => {
             </p>
             <div className="flex">
               <ScriptBtn
-                className={`m-2  border-white bg-custom hidden lg:block rounded-[2rem] ${buttonClass}`}
+                className={`m-2 border-white bg-custom hidden lg:block rounded-[2rem] ${buttonClass}`}
               >
                 <a href="/">Download Schedule</a>
               </ScriptBtn>
             </div>
-            <img src="/cal.png" className="w-[300px] hidden lg:block " />
+            <img src="/cal.png" className="w-[300px] hidden lg:block" />
           </div>
           <ScheduleTabs color="orangee" />
         </div>
-        {/* <Speakerss color="pin" /> */}
+
         <ScriptBtn
           className={`m-2 border lg:hidden ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
         >
@@ -72,14 +76,16 @@ const Schedule = (buttonClass) => {
         </ScriptBtn>
       </div>
 
-      <div className="relative z-10 ml-6 mr-6 lg:mr-0 lg:ml-0">
+      <div className="container mx-auto relative z-10   ">
         <Footer color="orange" />
       </div>
+
       <img
         src="/img/ll.png"
-        className="absolute  left-0  w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28 "
+        className="absolute left-0 w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28"
       />
     </div>
   );
 };
+
 export default Schedule;

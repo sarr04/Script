@@ -47,7 +47,10 @@ const Input = ({ buttonClass }: InputProps) => {
 
   return (
     <div className="">
-      <img src="/brandinput.svg" className="absolute " />
+      <img
+        src="/brandinput.svg"
+        className="absolute w-full h-full object-cover block "
+      />
       <NavBar
         buttonClass="bg-gradient-to-r from-orange-400 to-pink-500 hover:bg-blue-700"
         imageSrc="../img/Logo.png"

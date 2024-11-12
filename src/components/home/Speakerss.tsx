@@ -23,8 +23,9 @@ export default function Speakerss(props: {
   buttonClass: string;
   color: keyof typeof colors;
   speakerss?: Speaker[];
+  limit: number;
 }) {
-  const { buttonClass, color, speakerss } = props;
+  const { buttonClass, color, speakerss, limit } = props;
 
   return (
     <div id="speakerss" className="pl-12 pr-12 ">
@@ -42,7 +43,7 @@ export default function Speakerss(props: {
             className="mySwiper"
           >
             {speakerss && speakerss.length > 0 ? (
-              speakerss.map((speaker, index) => (
+              speakerss.slice(0, limit).map((speaker, index) => (
                 <SwiperSlide key={index}>
                   <div className="flex flex-col items-center">
                     <img

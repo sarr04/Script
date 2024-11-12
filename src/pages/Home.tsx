@@ -10,13 +10,19 @@ export default function Home() {
   return (
     <div className="font-primaryRegular">
       <NavBar
-        buttonClass="bg-custom  hover:bg-blue-700"
+        buttonClass="bg-custom hover:bg-blue-700"
         imageSrc="/img/Logo.png"
       />
 
-      <Hero />
-      <Aboutt />
-      <div className="text-black rounded-2xl bg-white h-150 w-170 relative z-20 p-8">
+      <div className="container mx-auto">
+        <Hero />
+      </div>
+
+      <div className="container mx-auto">
+        <Aboutt />
+      </div>
+
+      <div className="container mx-auto text-black rounded-2xl bg-white h-150 w-170 relative z-20 p-8 mt-10">
         <h4 className="flex justify-center font-bold items-center text-center pt-10 bg-white">
           EVENT CONFERENCE SPEAKERS
         </h4>
@@ -27,8 +33,9 @@ export default function Home() {
           Meet the visionaries shaping the <br /> future of social media.
         </h4>
       </div>
+
       <Link smooth to="/#speakers"></Link>
-      <div id="speakers">
+      <div id="speakers" className="container mx-auto">
         <Speakerss
           speakerss={[
             {
@@ -77,18 +84,21 @@ export default function Home() {
               name: "Marvin McKinney",
               work: "influencer",
               followers: "400k Followers",
-              img: "img/d.png",
+              img: "/img/d.png",
             },
           ]}
           color="pin"
         />
       </div>
-      <Join />
 
-      <div className="flex flex-col items-center text-black bg-white pb-18 pt-28">
+      <div className="container mx-auto">
+        <Join />
+      </div>
+
+      <div className="container mx-auto flex flex-col items-center text-black bg-white pb-18 pt-28">
         <img
           src="/img/ll.png"
-          className="absolute  left-0 h-[300px]  w-[600px]  lg:hidden "
+          className="absolute left-0 h-[300px] w-[600px] lg:hidden"
         />
         <h3 className="hidden md:block text-center lg:text-2xl">
           EVENT SPONSOR
@@ -96,7 +106,6 @@ export default function Home() {
         <h1 className="lg:text-4xl text-3xl font-bold text-center mb-10">
           OUR PARTNERS
         </h1>
-
         <div className="container relative">
           <div className="mt-11 mb-16 grid grid-cols-3 gap-4 justify-items-center lg:flex lg:flex-row lg:justify-center lg:space-x-[70px] mx-4">
             <img src="/img/Logxo.png" className="h-10 mx-2" />
@@ -108,12 +117,14 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="relative z-10 ml-6 mr-6 lg:mr-0 lg:ml-0">
         <Footer color="orange" />
       </div>
+
       <img
         src="/img/ll.png"
-        className="absolute  left-0  w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28 "
+        className="absolute left-0 w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28"
       />
     </div>
   );
