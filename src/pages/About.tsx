@@ -142,7 +142,7 @@ const About = (buttonClass) => {
         </div>
       )}
 
-      <div id="spearkers" className="px-4 ">
+      <div id="speakerss" className="px-4 ">
         <div className="text-center ">
           <h1 className="font-bold text-3xl pt-12 pb-5">WHO ATTENDS SCRIPT?</h1>
           <h4 className="text-xl">

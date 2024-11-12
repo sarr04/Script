@@ -13,6 +13,54 @@ type TabsProps = {
 function ScheduleTabs(props: TabsProps) {
   const [activeTab, setActiveTab] = useState("morning");
 
+  const speakersData = {
+    morning: [
+      {
+        name: "Kristin",
+        work: "Influencer",
+        followers: "500k Followers",
+        img: "../public/img/a.png",
+      },
+      {
+        name: "Jerome Bell",
+        work: "Influencer",
+        followers: "20k Followers",
+        img: "../public/img/b.png",
+      },
+      // Add other speakers for the morning tab here...
+    ],
+    noon: [
+      {
+        name: "Jacob Jones",
+        work: "Influencer",
+        followers: "500k Followers",
+        img: "../public/img/c.png",
+      },
+      {
+        name: "Cameron Wil",
+        work: "Influencer",
+        followers: "200k Followers",
+        img: "../public/img/d.png",
+      },
+      // Add other speakers for the noon tab here...
+    ],
+    evening: [
+      {
+        name: "Devon Lane",
+        work: "Influencer",
+        followers: "500k Followers",
+        img: "../public/img/e.png",
+      },
+      {
+        name: "Ronald Richards",
+        work: "Influencer",
+        followers: "500k Followers",
+        img: "../public/img/f.png",
+      },
+      // Add other speakers for the evening tab here...
+    ],
+  };
+
   const scheduleContent = {
     morning: [
       {
@@ -150,7 +198,11 @@ function ScheduleTabs(props: TabsProps) {
           ))}
         </div>
       </div>
-      <div className=""></div>
+      <Speakerss
+        buttonClass=""
+        color="pin"
+        speakerss={speakersData[activeTab]}
+      />
     </div>
   );
 }

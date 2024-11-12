@@ -64,13 +64,14 @@ const Schedule = (buttonClass) => {
           </div>
           <ScheduleTabs color="orangee" />
         </div>
-        <Speakerss color="pin" />
+        {/* <Speakerss color="pin" /> */}
         <ScriptBtn
           className={`m-2 border lg:hidden ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
         >
           <a href="/">Download Schedule</a>
         </ScriptBtn>
       </div>
+
       <div className="relative z-10 ml-6 mr-6 lg:mr-0 lg:ml-0">
         <Footer color="orange" />
       </div>

@@ -23,7 +23,7 @@ function NavBar({ buttonClass, imageSrc }) {
 
           <nav className="hidden lg:flex space-x-12 text-xl ">
             <Link to="/About">About</Link>
-            <a href="#spearkers">Speakers</a>
+            <a href="#speakerss">Speakers</a>
             <Link to="/Schedule">Schedule</Link>
           </nav>
 
