@@ -29,7 +29,59 @@ export default function Home() {
       </div>
       <Link smooth to="/#speakers"></Link>
       <div id="speakers">
-        <Speakerss color="pin" />
+        <Speakerss
+          speakerss={[
+            {
+              name: "Ronald Richards",
+              work: "influencer",
+              followers: "500k Followers",
+              img: "/Elliaadffpse 1.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/g.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "public/img/f.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/h.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/b.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/c.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/a.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "img/d.png",
+            },
+          ]}
+          color="pin"
+        />
       </div>
       <Join />
 

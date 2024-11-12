@@ -155,9 +155,38 @@ const About = (buttonClass) => {
           <h3 className="font-bold text-xl">
             Here's who you'll meet at SCRIPT:
           </h3>
+          arvin
         </div>
       </div>
-      <Speakers color="blu" />
+      <Speakers
+        speakerss={[
+          {
+            name: "Marvin McKinney",
+            work: "influencer",
+            followers: "400k Followers",
+            img: "/img/b.png",
+          },
+          {
+            name: "Marvin McKinney",
+            work: "influencer",
+            followers: "400k Followers",
+            img: "/img/c.png",
+          },
+          {
+            name: "Marvin McKinney",
+            work: "influencer",
+            followers: "400k Followers",
+            img: "/img/a.png",
+          },
+          {
+            name: "Marvin McKinney",
+            work: "influencer",
+            followers: "400k Followers",
+            img: "img/d.png",
+          },
+        ]}
+        color="blu"
+      />
       <ScriptBtn
         className={`border border-white lg:mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
       >

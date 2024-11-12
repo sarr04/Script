@@ -27,7 +27,6 @@ function ScheduleTabs(props: TabsProps) {
         followers: "20k Followers",
         img: "../public/img/b.png",
       },
-      // Add other speakers for the morning tab here...
     ],
     noon: [
       {
@@ -42,7 +41,6 @@ function ScheduleTabs(props: TabsProps) {
         followers: "200k Followers",
         img: "../public/img/d.png",
       },
-      // Add other speakers for the noon tab here...
     ],
     evening: [
       {
@@ -57,7 +55,6 @@ function ScheduleTabs(props: TabsProps) {
         followers: "500k Followers",
         img: "../public/img/f.png",
       },
-      // Add other speakers for the evening tab here...
     ],
   };
 
