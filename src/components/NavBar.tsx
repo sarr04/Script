@@ -1,6 +1,6 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ScriptBtn from "./ScriptBtn";
 
 function NavBar({ buttonClass, imageSrc }) {
@@ -22,9 +22,27 @@ function NavBar({ buttonClass, imageSrc }) {
           </Link>
 
           <nav className="hidden lg:flex space-x-12 text-xl ">
-            <Link to="/About">About</Link>
+            <NavLink
+              className={(navClass) =>
+                navClass.isActive
+                  ? "font-bold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
+                  : "text-black"
+              }
+              to="/About"
+            >
+              About
+            </NavLink>
             <a href="#speakerss">Speakers</a>
-            <Link to="/Schedule">Schedule</Link>
+            <NavLink
+              className={(navClass) =>
+                navClass.isActive
+                  ? "bg-gradient-to-r from-pink-400 to-orange-500 text-transparent bg-clip-text"
+                  : "text-black"
+              }
+              to="/Schedule"
+            >
+              Schedule
+            </NavLink>
           </nav>
 
           <button
@@ -63,32 +81,45 @@ function NavBar({ buttonClass, imageSrc }) {
               </svg>
             </button>
             <nav className="flex flex-col items-center space-y-4">
-              <Link
+              <NavLink
                 to="/About"
                 onClick={toggleMobileMenu}
-                className="hover:bg-gray-100 p-2 rounded"
+                className={(navClass) =>
+                  navClass.isActive
+                    ? "font-bold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
+                    : "text-black"
+                }
               >
                 About
-              </Link>
-              <Link
-                to="/Speakers"
+              </NavLink>
+              <NavLink
+                to="/"
                 onClick={toggleMobileMenu}
-                className="hover:bg-gray-100 p-2 rounded"
+                className={(navClass) =>
+                  navClass.isActive
+                    ? "bg-gradient-to-r from-pink-400 to-orange-500 text-transparent bg-clip-text"
+                    : "text-black"
+                }
               >
                 Speakers
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/Schedule"
                 onClick={toggleMobileMenu}
-                className="hover:bg-gray-100 p-2 rounded"
+                className={(navClass) =>
+                  navClass.isActive
+                    ? "bg-gradient-to-r from-pink-400 to-orange-500 text-transparent bg-clip-text"
+                    : "text-black"
+                }
               >
                 Schedule
-              </Link>
+              </NavLink>
+
               <ScriptBtn
                 className={`rounded-[2rem] text-white w-full mt-4 ${buttonClass}`}
                 onClick={toggleMobileMenu}
               >
-                <Link to="/BookATicket">Book A Ticket</Link>
+                <NavLink to="/BookATicket">Book A Ticket</NavLink>
               </ScriptBtn>
             </nav>
           </div>

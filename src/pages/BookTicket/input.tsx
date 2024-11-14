@@ -56,10 +56,10 @@ const Input = ({ buttonClass }: InputProps) => {
         imageSrc="../img/Logo.png"
       />
 
-      <div className="relative flex items-center justify-center min-h-screen">
+      <div className="mx-6 relative flex items-center justify-center min-h-screen">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-md space-y-4"
+          className="w-full max-w-md space-y-4 container"
         >
           <div className="flex  mb-4">
             <label htmlFor="photoInput" className="cursor-pointer mx-3">

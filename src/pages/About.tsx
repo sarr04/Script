@@ -29,13 +29,13 @@ const About = (buttonClass) => {
   ];
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <NavBar
         buttonClass="bg-custom2 hover:bg-blue-700"
         imageSrc="/img/Logoblue.svg"
       />
 
-      <div className="container mx-auto max-w-screen-lg px-4 lg:py-20 mt-5 p-10 bg-custom2 rounded-3xl text-white">
+      <div className="w-[90%] lg:w-full max-w-screen-lg mx-auto px-4 lg:py-20 mt-5 p-10 bg-custom2 rounded-3xl text-white">
         <div className="text-center">
           <h1 className="font-bold text-4xl tracking-widest">
             ABOUT SCRIPT CONFERENCE
@@ -52,14 +52,14 @@ const About = (buttonClass) => {
         </div>
       </div>
 
-      <div className="container mx-auto text-center my-10">
+      <div className="container mx-auto px-4 text-center my-10">
         <h1 className="bg-white font-bold text-2xl lg:text-5xl my-6">
           OUR MISSION & VISION
         </h1>
 
         <div className="flex flex-col lg:flex-row lg:gap-10 items-center lg:items-start text-center lg:text-left">
           <div className="flex flex-col lg:w-1/2">
-            <h1 className="font-bold text-xl lg:text-black text-purple-700 mb-2 lg:text-3xl">
+            <h1 className="font-bold text-2xl lg:text-black text-purple-700 mb-2 lg:text-3xl">
               Our Mission
             </h1>
             <p className="text-gray-600 lg:text-2xl">
@@ -71,11 +71,11 @@ const About = (buttonClass) => {
           <div className="relative flex lg:w-1/2 justify-center lg:justify-end">
             <img
               src="/img/1.png"
-              className="relative w-[250px] lg:w-[400px] scale-125 translate-x-12 hidden md:block"
+              className="relative lg:h-[500px] lg:w-[600px] scale-125 -translate-x-5 hidden md:block"
             />
             <img
               src="/img/shap-06.png"
-              className="absolute top-1/2 translate-y-[-50%] left-[50%] translate-x-[-20%] w-[200px] lg:w-[300px] hidden md:block"
+              className="absolute top-1/2 translate-y-[-50%] left-[50%] translate-x-[-60%]  lg:w-[400px] hidden md:block"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@ const About = (buttonClass) => {
             <h1 className="font-bold text-2xl lg:text-black text-purple-700 mb-2 lg:text-3xl">
               Our Vision
             </h1>
-            <p className="text-gray-600 lg:text-xl">
+            <p className="text-gray-600 lg:text-xl ">
               AT SCRIPT, our vision is to create a global community where
               influencers, creators, and brands can come together to inspire,
               innovate, and drive meaningful change in the digital landscape.
@@ -94,11 +94,11 @@ const About = (buttonClass) => {
           <div className="relative flex lg:w-1/2 justify-center lg:justify-start">
             <img
               src="/img/2.png"
-              className="relative w-[250px] lg:w-[500px] scale-125 -translate-x-12 hidden md:block"
+              className="relative lg:w-[500px] scale-125 translate-x-4 hidden md:block -translate-y-24"
             />
             <img
               src="/halfcircle.png"
-              className="absolute top-1/2 translate-y-[-50%] left-[50%] translate-x-[-90%] w-[200px] lg:w-[250px] hidden md:block"
+              className="absolute top-1/2 translate-y-[-70%] left-[50%] translate-x-[-60%] lg:w-[400px] hidden md:block"
             />
           </div>
         </div>
@@ -109,8 +109,11 @@ const About = (buttonClass) => {
       </div>
 
       <div className="container mx-auto lg:flex justify-center items-center grid grid-rows-3 gap-2 relative overflow-hidden lg:py-7">
-        <img src="squarepattern.png" className="absolute hidden md:block" />
-        <img src="/tallbrand.png" className="absolute block lg:hidden" />
+        <img src="squarepattern.png" className="absolute  hidden md:block" />
+        <img
+          src="/tallbrand.png"
+          className="absolute w-full h-full block lg:hidden"
+        />
         <Hover
           buttonText="Networking"
           hoverGradient="from-purple-400 to-blue-500"
@@ -206,7 +209,7 @@ const About = (buttonClass) => {
         DAILY SCHEDULE
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 justify-between">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 justify-between lg:mt-6">
         <div className="px-4 space-y-4">
           <h4 className="font-bold text-center lg:text-left text-xl">
             Welcome to the Script Conference! Here’s What You Can Expect
@@ -246,7 +249,7 @@ const About = (buttonClass) => {
 
       <img
         src="/img/ll.png"
-        className="absolute left-0 w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28"
+        className="absolute left-0 w-full lg:-translate-y-96 -translate-y-28"
       />
     </section>
   );

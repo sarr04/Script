@@ -22,7 +22,7 @@ export default function Home() {
         <Aboutt />
       </div>
 
-      <div className="container mx-auto text-black rounded-2xl bg-white h-150 w-170 relative z-20 p-8 mt-10">
+      <div className="container mx-auto text-black rounded-2xl bg-white h-150 w-170 relative z-20  ">
         <h4 className="flex justify-center font-bold items-center text-center pt-10 bg-white">
           EVENT CONFERENCE SPEAKERS
         </h4>
@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       <Link smooth to="/#speakers"></Link>
-      <div id="speakers" className="container mx-auto">
+      <div id="speakers" className="container mx-auto ">
         <Speakerss
           speakerss={[
             {
@@ -149,11 +149,8 @@ export default function Home() {
         <Join />
       </div>
 
-      <div className="container mx-auto flex flex-col items-center text-black bg-white pb-18 pt-28">
-        <img
-          src="/img/ll.png"
-          className="absolute left-0 h-[300px] w-[600px] lg:hidden"
-        />
+      <div className="container mx-auto  flex flex-col items-center text-black bg-white pb-18 pt-28">
+        <img src="/img/ll.png" className="absolute left-0  w-full lg:hidden" />
         <h3 className="hidden md:block text-center lg:text-2xl">
           EVENT SPONSOR
         </h3>
@@ -178,7 +175,7 @@ export default function Home() {
 
       <img
         src="/img/ll.png"
-        className="absolute left-0 w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28"
+        className="absolute left-0 w-full lg:w-full lg:-translate-y-96 -translate-y-28"
       />
     </div>
   );

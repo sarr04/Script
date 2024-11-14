@@ -27,7 +27,7 @@ export default function Join(buttonClass) {
 
           <div className="container lg:w-1/2 flex justify-center mt-6 lg:mt-0">
             <img
-              className="hidden md:block lg:w-[380px]"
+              className="hidden lg:block lg:w-[380px]"
               src="../public/img/00.png"
             />
           </div>

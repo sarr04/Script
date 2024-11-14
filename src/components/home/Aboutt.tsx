@@ -33,8 +33,8 @@ export default function Aboutt(buttonClass) {
           </div>
         </div>
 
-        <div className="container relative lg:mt-8">
-          <div className=" bg-custom rounded-[2rem]">
+        <div className="container mx-auto relative lg:mt-8">
+          <div className=" bg-custom rounded-[2rem] ">
             <div className=" flex justify-center md:justify-around flex-wrap gap-4 p-4">
               <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[160px] h-[160px] lg:h-[300px]  lg:w-[300px] rounded-[1rem] flex flex-col items-center text-center about-card-shadow">
                 <img

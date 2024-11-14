@@ -146,31 +146,32 @@ function ScheduleTabs(props: TabsProps) {
     <div className="mt-4 lg:mt-0">
       <div className="w-full max-w-lg mx-auto">
         <div
-          className={`flex justify-around rounded-3xl py-2 px-2 lg:px-0 ${colorClass}`}
+          className={`flex px-2 lg:px-0 justify-around rounded-3xl py-2  ${colorClass}`}
         >
           <button
-            className={`px-2 lg:px-4 py-2  rounded-3xl ${
+            className={`px-4 py-2 rounded-3xl whitespace-nowrap flex flex-col items-center ${
               activeTab === "morning" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("morning")}
           >
-            Morning time <br /> <span className="font-bold">9:00 - 12:30</span>
+            Morning time
+            <span className="font-bold">9:00-12:30</span>
           </button>
           <button
-            className={`px-4 py-2  rounded-3xl ${
+            className={`px-4 py-2  whitespace-nowrap flex flex-col items-center rounded-3xl ${
               activeTab === "noon" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("noon")}
           >
-            Noon time <br /> <span className="font-bold">12:30 - 5:00</span>
+            Noon time <span className="font-bold">12:30 - 5:00</span>
           </button>
           <button
-            className={`px-4 py-2  rounded-3xl ${
+            className={`px-4 py-2  whitespace-nowrap flex flex-col items-center  rounded-3xl ${
               activeTab === "evening" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("evening")}
           >
-            Evening time <br /> <span className="font-bold">5:00 - 8:00</span>
+            Evening time <span className="font-bold">5:00 - 8:00</span>
           </button>
         </div>
 

@@ -13,7 +13,7 @@ const Schedule = (buttonClass) => {
         imageSrc="/img/Logo.png"
       />
 
-      <div className="container mx-auto max-w-screen-lg px-4 lg:py-20   rounded-3xl text-white ">
+      <div className="container mx-auto max-w-screen-lg px-4   rounded-3xl text-white ">
         <div className="w-full  px-6 lg:px-0">
           <div className="text-white rounded-[2rem] bg-custom pb-20 relative z-10">
             <h2 className="text-white justify-center text-center font-bold text-3xl tracking-widest pb-3 pt-12">
@@ -30,7 +30,7 @@ const Schedule = (buttonClass) => {
             </div>
             <div className="flex justify-center items-center">
               <ScriptBtn
-                className={`m-4 border border-white rounded-[2rem] ${buttonClass}`}
+                className={`mt-1  border border-white rounded-[2rem] ${buttonClass}`}
               >
                 <a href="/BookATicket">Download Schedule</a>
               </ScriptBtn>
@@ -71,7 +71,7 @@ const Schedule = (buttonClass) => {
         </div>
 
         <ScriptBtn
-          className={`m-2 border lg:hidden ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
+          className={`m-2 border lg:hidden  ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
         >
           <a href="/">Download Schedule</a>
         </ScriptBtn>
@@ -83,7 +83,7 @@ const Schedule = (buttonClass) => {
 
       <img
         src="/img/ll.png"
-        className="absolute left-0 w-[600px] lg:w-full lg:-translate-y-96 -translate-y-28"
+        className="absolute left-0 w-full lg:-translate-y-96 -translate-y-28"
       />
     </div>
   );
