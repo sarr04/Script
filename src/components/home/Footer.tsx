@@ -9,9 +9,9 @@ type FooterProps = {
 
 export default function Footer(props: FooterProps) {
   return (
-    <footer>
+    <footer className="container mx-auto">
       <div
-        className={`container relative flex flex-col lg:pt-32 pb-24 pt-24 lg:pb-32 items-center gap-4 bg-gradient-to-r ${
+        className={`relative w-[90%] mx-auto lg:w-full flex flex-col lg:pt-32 pb-24 pt-24 lg:pb-32 items-center gap-4  ${
           colors[props.color]
         } rounded-[2rem] py-8 px-4 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12`}
       >

@@ -12,6 +12,8 @@ import Speakers from "../components/home/Speakerss";
 const About = (buttonClass) => {
   const [openIndex, setOpenIndex] = useState(null);
 
+  const showSpekers = false;
+
   const handleToggle = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
@@ -29,11 +31,11 @@ const About = (buttonClass) => {
   return (
     <section>
       <NavBar
-        buttonClass="bg-gradient-to-b from-blue-300 to-purple-500 hover:bg-blue-700"
+        buttonClass="bg-custom2 hover:bg-blue-700"
         imageSrc="/img/Logoblue.svg"
       />
 
-      <div className="container mx-auto lg:py-20 mt-5 p-10 bg-custom2 rounded-3xl text-white">
+      <div className="container mx-auto max-w-screen-lg px-4 lg:py-20 mt-5 p-10 bg-custom2 rounded-3xl text-white">
         <div className="text-center">
           <h1 className="font-bold text-4xl tracking-widest">
             ABOUT SCRIPT CONFERENCE
@@ -144,36 +146,55 @@ const About = (buttonClass) => {
         </h4>
         <h3 className="font-bold text-xl">Here's who you'll meet at SCRIPT:</h3>
       </div>
-
-      <Speakers
-        speakerss={[
-          {
-            name: "Marvin McKinney",
-            work: "influencer",
-            followers: "400k Followers",
-            img: "/img/b.png",
-          },
-          {
-            name: "Marvin McKinney",
-            work: "influencer",
-            followers: "400k Followers",
-            img: "/img/c.png",
-          },
-          {
-            name: "Marvin McKinney",
-            work: "influencer",
-            followers: "400k Followers",
-            img: "/img/a.png",
-          },
-          {
-            name: "Marvin McKinney",
-            work: "influencer",
-            followers: "400k Followers",
-            img: "img/d.png",
-          },
-        ]}
-        color="blu"
-      />
+      <div className="mx-3">
+        <Speakers
+          speakerss={[
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/b.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/c.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "/img/a.png",
+            },
+            {
+              name: "Marvin McKinney",
+              work: "influencer",
+              followers: "400k Followers",
+              img: "img/d.png",
+            },
+            {
+              name: "ccc",
+              work: "content creator",
+              followers: "20k followers",
+              img: "/cc.png",
+            },
+            {
+              name: "dddddd",
+              work: "media",
+              followers: "300k followers",
+              img: "/dd.png",
+            },
+            {
+              name: "eeeee",
+              work: "blogger",
+              followers: "20k followers",
+              img: "/ee.png",
+            },
+          ]}
+          color="blu"
+        />
+      </div>
 
       <ScriptBtn
         className={`border border-white lg:mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
@@ -209,7 +230,7 @@ const About = (buttonClass) => {
         </div>
 
         <div className="px-4 lg:pl-8">
-          <ScheduleTabs color="bluee" />
+          <ScheduleTabs showSpekers={showSpekers} color="bluee" />
         </div>
 
         <ScriptBtn

@@ -8,6 +8,7 @@ const colors = {
 
 type TabsProps = {
   color: keyof typeof colors;
+  showSpekers: boolean;
 };
 
 function ScheduleTabs(props: TabsProps) {
@@ -142,11 +143,13 @@ function ScheduleTabs(props: TabsProps) {
   const colorClass = colors[props.color];
 
   return (
-    <div>
+    <div className="mt-4 lg:mt-0">
       <div className="w-full max-w-lg mx-auto">
-        <div className={`flex justify-around rounded-3xl py-2 ${colorClass}`}>
+        <div
+          className={`flex justify-around rounded-3xl py-2 px-2 lg:px-0 ${colorClass}`}
+        >
           <button
-            className={`px-4 py-2  rounded-3xl ${
+            className={`px-2 lg:px-4 py-2  rounded-3xl ${
               activeTab === "morning" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("morning")}
@@ -195,11 +198,13 @@ function ScheduleTabs(props: TabsProps) {
           ))}
         </div>
       </div>
-      <Speakerss
-        buttonClass=""
-        color="pin"
-        speakerss={speakersData[activeTab]}
-      />
+      {props.showSpekers && (
+        <Speakerss
+          buttonClass=""
+          color="pin"
+          speakerss={speakersData[activeTab]}
+        />
+      )}
     </div>
   );
 }

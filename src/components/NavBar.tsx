@@ -11,8 +11,8 @@ function NavBar({ buttonClass, imageSrc }) {
   };
 
   return (
-    <header className="sticky top-0 bg-white shadow mb-2 p-2 z-50">
-      <div className="container mx-auto">
+    <header className="sticky top-0 bg-white mb-2 p-2 z-50 container mx-auto">
+      <div className="">
         <div className="flex items-center justify-between">
           <Link to="/">
             <img

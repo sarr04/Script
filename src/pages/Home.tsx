@@ -86,6 +86,60 @@ export default function Home() {
               followers: "400k Followers",
               img: "/img/d.png",
             },
+            {
+              name: "aaaa",
+              work: "aa",
+              followers: "200k folowers",
+              img: "/aa.png",
+            },
+            {
+              name: "bbbbbb",
+              work: "influencer",
+              followers: "10k followers",
+              img: "/bb.png",
+            },
+            {
+              name: "ccc",
+              work: "content creator",
+              followers: "20k followers",
+              img: "/cc.png",
+            },
+            {
+              name: "dddddd",
+              work: "media",
+              followers: "300k followers",
+              img: "/dd.png",
+            },
+            {
+              name: "eeeee",
+              work: "blogger",
+              followers: "20k followers",
+              img: "/ee.png",
+            },
+            {
+              name: "fff",
+              work: "youtuber",
+              followers: "30k followers",
+              img: "/ff.png",
+            },
+            {
+              name: "gggg",
+              work: "tiktoker",
+              followers: "20k followrs",
+              img: "/jj.png",
+            },
+            {
+              name: "hhh",
+              work: "influncer",
+              followers: "3k folloers",
+              img: "/mm.png",
+            },
+            {
+              name: "jjj",
+              work: "content creator",
+              followers: "5k followers",
+              img: "/jj.png",
+            },
           ]}
           color="pin"
         />

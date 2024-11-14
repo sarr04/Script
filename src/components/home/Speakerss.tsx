@@ -28,44 +28,51 @@ export default function Speakerss(props: {
   const { buttonClass, color, speakerss, limit } = props;
 
   return (
-    <div id="speakerss" className="pl-12 pr-12 ">
+    <div id="speakerss" className="lg:pl-12 lg:pr-12 ">
       <div className="block justify-center items-center mt-10">
         <div
           className={`lg:rounded-[4rem] rounded-[2rem] relative z-20 pt-11 lg:px-5 ${colors[color]}`}
         >
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
-            {speakerss && speakerss.length > 0 ? (
-              speakerss.slice(0, limit).map((speaker, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="inline lg:w-[200px] w-[150px]"
-                      src={speaker.img}
-                    />
-                    <div className="translate-y-[-30%] flex">
-                      <Socials
-                        name={speaker.name}
-                        work={speaker.work}
-                        followers={speaker.followers}
+          <div className="max-w-screen-lg mx-auto flex justify-center">
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              breakpoints={{
+                1024: {
+                  slidesPerView: 4,
+                },
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              {speakerss && speakerss.length > 0 ? (
+                speakerss.slice(0, limit).map((speaker, index) => (
+                  <SwiperSlide style={{ maxWidth: "300px" }} key={index}>
+                    <div className="flex flex-col items-center">
+                      <img
+                        className="inline lg:w-[200px] w-[150px]"
+                        src={speaker.img}
                       />
+                      <div className="translate-y-[-30%] flex">
+                        <Socials
+                          name={speaker.name}
+                          work={speaker.work}
+                          followers={speaker.followers}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))
-            ) : (
-              <div className="text-center text-white">
-                No speakers available
-              </div>
-            )}
-          </Swiper>
+                  </SwiperSlide>
+                ))
+              ) : (
+                <div className="text-center text-white">
+                  No speakers available
+                </div>
+              )}
+            </Swiper>
+          </div>
 
           <div className="flex justify-center mt-6 pb-10">
             <ScriptBtn
