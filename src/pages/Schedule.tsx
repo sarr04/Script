@@ -13,9 +13,9 @@ const Schedule = (buttonClass) => {
         imageSrc="/img/Logo.png"
       />
 
-      <div className="container mx-auto max-w-screen-lg px-4   rounded-3xl text-white ">
-        <div className="w-full  px-6 lg:px-0">
-          <div className="text-white rounded-[2rem] bg-custom pb-20 relative z-10">
+      <div className="container mx-auto max-w-screen-lg px-2   rounded-3xl text-white ">
+        <div className="w-full  px-4 lg:px-0">
+          <div className="text-white rounded-[2rem] bg-custom pb-10 relative z-10">
             <h2 className="text-white justify-center text-center font-bold text-3xl tracking-widest pb-3 pt-12">
               WELCOME TO SCRIPT 2024
             </h2>

@@ -28,6 +28,18 @@ function ScheduleTabs(props: TabsProps) {
         followers: "20k Followers",
         img: "../public/img/b.png",
       },
+      {
+        name: "Jerome Bell",
+        work: "Influencer",
+        followers: "20k Followers",
+        img: "../public/ff.png",
+      },
+      {
+        name: "Jerome Bell",
+        work: "Influencer",
+        followers: "20k Followers",
+        img: "../public/bb.png",
+      },
     ],
     noon: [
       {
@@ -41,6 +53,18 @@ function ScheduleTabs(props: TabsProps) {
         work: "Influencer",
         followers: "200k Followers",
         img: "../public/img/d.png",
+      },
+      {
+        name: "Jerome Bell",
+        work: "Influencer",
+        followers: "20k Followers",
+        img: "../public/bb.png",
+      },
+      {
+        name: "Jerome Bell",
+        work: "Influencer",
+        followers: "20k Followers",
+        img: "../public/dd.png",
       },
     ],
     evening: [
@@ -145,9 +169,7 @@ function ScheduleTabs(props: TabsProps) {
   return (
     <div className="mt-4 lg:mt-0">
       <div className="w-full max-w-lg mx-auto">
-        <div
-          className={`flex px-2 lg:px-0 justify-around rounded-3xl py-2  ${colorClass}`}
-        >
+        <div className={`flex justify-around rounded-3xl py-2  ${colorClass}`}>
           <button
             className={`px-4 py-2 rounded-3xl whitespace-nowrap flex flex-col items-center ${
               activeTab === "morning" ? `bg-white text-black` : "text-white"
