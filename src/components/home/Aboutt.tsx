@@ -33,10 +33,10 @@ export default function Aboutt(buttonClass) {
           </div>
         </div>
 
-        <div className="container mx-auto relative lg:mt-8">
+        <div className="container px-3 relative lg:mt-8">
           <div className=" bg-custom rounded-[2rem] ">
             <div className=" flex justify-center md:justify-around flex-wrap gap-4 p-4">
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[160px] h-[160px] lg:h-[300px]  lg:w-[300px] rounded-[1rem] flex flex-col items-center text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[140px] h-[140px] lg:h-[300px]  lg:w-[300px] rounded-[1rem] flex flex-col items-center text-center about-card-shadow">
                 <img
                   className="bg-white lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
                   src="/img/mic.svg"
@@ -53,7 +53,7 @@ export default function Aboutt(buttonClass) {
                 </p>
               </div>
 
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[160px] h-[160px] lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col items-center text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[140px] h-[140px] lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col items-center text-center about-card-shadow">
                 <img
                   className="bg-white lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
                   src="/img/mdi_talk.svg"
@@ -70,7 +70,7 @@ export default function Aboutt(buttonClass) {
                 </p>
               </div>
 
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  justify-center w-[160px] h-[160px]  lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col  items-center  text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  justify-center w-[140px] h-[140px]  lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col  items-center  text-center about-card-shadow">
                 <img
                   className="bg-white  lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
                   src="/img/peoplee.svg"

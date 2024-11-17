@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       <Link smooth to="/#speakers"></Link>
-      <div id="speakers" className="container mx-auto ">
+      <div id="speakers" className="container px-5">
         <Speakerss
           speakerss={[
             {
