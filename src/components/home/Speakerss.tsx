@@ -1,18 +1,15 @@
 import Socials from "../Socials";
 import ScriptBtn from "../ScriptBtn";
-import React from "react";
 import "./style.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-
+import { Link } from "react-router-dom";
 const colors = {
   pin: "bg-custom",
   blu: "bg-custom2",
 };
-type Speaker = {
+export type Speaker = {
   name: string;
   work: string;
   followers: string;
@@ -24,6 +21,7 @@ export default function Speakerss(props: {
   color: keyof typeof colors;
   speakerss?: Speaker[];
   limit: number;
+  showAll: boolean;
 }) {
   const { buttonClass, color, speakerss, limit } = props;
 
@@ -33,55 +31,81 @@ export default function Speakerss(props: {
         <div
           className={`lg:rounded-[4rem] rounded-[2rem] relative z-20 pt-11 lg:px-5 ${colors[color]}`}
         >
-          <div className="max-w-screen-lg mx-auto flex justify-center">
-            <Swiper
-              slidesPerView={2}
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              breakpoints={{
-                1024: {
-                  slidesPerView: 4,
-                },
-              }}
-              modules={[Pagination]}
-              className="mySwiper"
-            >
-              {speakerss && speakerss.length > 0 ? (
-                speakerss.slice(0, limit).map((speaker, index) => (
-                  <SwiperSlide style={{ maxWidth: "300px" }} key={index}>
-                    <div className="flex flex-col items-center">
-                      <img
-                        className="inline lg:w-[200px] w-[150px]"
-                        src={speaker.img}
-                      />
-                      <div className="translate-y-[-30%] flex">
-                        <Socials
-                          name={speaker.name}
-                          work={speaker.work}
-                          followers={speaker.followers}
+          <div className="max-w-screen-lg container px-2 mx-auto flex justify-center">
+            {!props.showAll ? (
+              <Swiper
+                slidesPerView={2}
+                spaceBetween={30}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 4,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {speakerss && speakerss.length > 0 ? (
+                  speakerss.slice(0, limit).map((speaker, index) => (
+                    <SwiperSlide style={{ maxWidth: "300px" }} key={index}>
+                      <div className="flex flex-col items-center">
+                        <img
+                          className="inline lg:w-[200px] w-[150px]"
+                          src={speaker.img}
                         />
+                        <div className="translate-y-[-30%] flex">
+                          <Socials
+                            name={speaker.name}
+                            work={speaker.work}
+                            followers={speaker.followers}
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))
+                ) : (
+                  <div className="text-center text-white">
+                    No speakers available
+                  </div>
+                )}
+              </Swiper>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-between w-full">
+                {speakerss && speakerss.length > 0 ? (
+                  speakerss.slice(0, limit).map((speaker, index) => (
+                    <div style={{ maxWidth: "300px" }} key={index}>
+                      <div className="flex flex-col items-center">
+                        <img
+                          className="inline lg:w-[200px] w-[150px]"
+                          src={speaker.img}
+                        />
+                        <div className="translate-y-[-30%] flex ">
+                          <Socials
+                            name={speaker.name}
+                            work={speaker.work}
+                            followers={speaker.followers}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </SwiperSlide>
-                ))
-              ) : (
-                <div className="text-center text-white">
-                  No speakers available
-                </div>
-              )}
-            </Swiper>
+                  ))
+                ) : (
+                  <div className="text-center text-white">
+                    No speakers available
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
-          <div className="flex justify-center mt-6 pb-10">
-            <ScriptBtn
-              customStyles={`bg-transparent lg:px-24 px-16 border-2 bg-white/10 backdrop-blur-[150px] border-white text-white ${buttonClass}`}
-              className="mb-8 "
-            >
-              <a href="./ScriptBtn.tsx">View All</a>
-            </ScriptBtn>
-          </div>
+          {!props.showAll && (
+            <div className="flex justify-center mt-6 pb-10">
+              <ScriptBtn
+                customStyles={`bg-transparent lg:px-24 px-16 border-2 bg-white/10 backdrop-blur-[150px] border-white text-white ${buttonClass}`}
+                className="mb-8 "
+              >
+                <Link to="/Speakers">View All</Link>
+              </ScriptBtn>
+            </div>
+          )}
         </div>
       </div>
     </div>

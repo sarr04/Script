@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Speakerss from "./home/Speakerss";
+import React, { useEffect, useState } from "react";
+import Speakerss, { Speaker } from "./home/Speakerss";
 
 const colors = {
   orangee: "bg-custom",
@@ -9,6 +9,7 @@ const colors = {
 type TabsProps = {
   color: keyof typeof colors;
   showSpekers: boolean;
+  onTabChange: (speakers: Speaker[], msg: string) => void;
 };
 
 function ScheduleTabs(props: TabsProps) {
@@ -164,12 +165,24 @@ function ScheduleTabs(props: TabsProps) {
     ],
   };
 
+  const speakerMessages = {
+    morning: "The speakers of the morning",
+    noon: "The speakers of the noon ",
+    evening: "The speakers of the evening",
+  };
+
   const colorClass = colors[props.color];
+
+  useEffect(() => {
+    props.onTabChange?.(speakersData[activeTab], speakerMessages[activeTab]);
+  }, [activeTab]);
 
   return (
     <div className="mt-4 lg:mt-0">
       <div className="w-full max-w-lg mx-auto">
-        <div className={`flex justify-around rounded-3xl py-2  ${colorClass}`}>
+        <div
+          className={`flex justify-center rounded-3xl  items-center py-2 ${colorClass}`}
+        >
           <button
             className={`px-4 py-2 rounded-3xl whitespace-nowrap flex flex-col items-center ${
               activeTab === "morning" ? `bg-white text-black` : "text-white"
@@ -180,7 +193,7 @@ function ScheduleTabs(props: TabsProps) {
             <span className="font-bold">9:00-12:30</span>
           </button>
           <button
-            className={`px-4 py-2  whitespace-nowrap flex flex-col items-center rounded-3xl ${
+            className={`px-4 py-2 whitespace-nowrap flex flex-col items-center rounded-3xl ${
               activeTab === "noon" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("noon")}
@@ -188,7 +201,7 @@ function ScheduleTabs(props: TabsProps) {
             Noon time <span className="font-bold">12:30 - 5:00</span>
           </button>
           <button
-            className={`px-4 py-2  whitespace-nowrap flex flex-col items-center  rounded-3xl ${
+            className={`px-4 py-2 whitespace-nowrap flex flex-col items-center rounded-3xl ${
               activeTab === "evening" ? `bg-white text-black` : "text-white"
             }`}
             onClick={() => setActiveTab("evening")}
@@ -204,7 +217,7 @@ function ScheduleTabs(props: TabsProps) {
                 <div className="absolute w-[2px] bg-black h-full left-[16px] top-0"></div>
               )}
 
-              <div className="relative flex flex-col items-center ">
+              <div className="relative flex flex-col items-center">
                 <div
                   className={`w-8 h-8 ${colorClass} text-white rounded-full flex items-center justify-center font-bold mb-2`}
                 >
@@ -222,11 +235,16 @@ function ScheduleTabs(props: TabsProps) {
         </div>
       </div>
       {props.showSpekers && (
-        <Speakerss
-          buttonClass=""
-          color="pin"
-          speakerss={speakersData[activeTab]}
-        />
+        <>
+          {/* <p className="text-center mt-4 lg:text-3xl font-bold  text-black">
+            {speakerMessages[activeTab]}
+          </p> */}
+          {/* <Speakerss
+            buttonClass=""
+            color="pin"
+            speakerss={speakersData[activeTab]}
+          /> */}
+        </>
       )}
     </div>
   );

@@ -2,9 +2,19 @@ import Footer from "../components/home/Footer";
 import NavBar from "../components/NavBar";
 import ScheduleTabs from "../components/ScheduleTabs";
 import ScriptBtn from "../components/ScriptBtn";
-import Speakerss from "../components/home/Speakerss";
+import { useState } from "react";
+import Speakers from "./Speakers";
+import Speakerss, { Speaker } from "../components/home/Speakerss";
 
 const Schedule = (buttonClass) => {
+  const [activeSpeakers, setActiveSpeakers] = useState<{
+    speakers: Speaker[];
+    msg: string;
+  }>({
+    msg: "",
+    speakers: [],
+  });
+
   const showSpekers = true;
   return (
     <div>
@@ -13,14 +23,14 @@ const Schedule = (buttonClass) => {
         imageSrc="/img/Logo.png"
       />
 
-      <div className="container mx-auto max-w-screen-lg px-2   rounded-3xl text-white ">
-        <div className="w-full  px-4 lg:px-0">
-          <div className="text-white rounded-[2rem] bg-custom pb-0 relative z-10">
-            <h2 className="text-white justify-center text-center font-bold text-3xl tracking-widest pb-3 pt-12">
+      <div className="container flex justify-center px-2 rounded-3xl text-white ">
+        <div className="px-4 lg:px-0 lg:w-[1200px]">
+          <div className="text-white rounded-[2rem] bg-custom lg:px-16  pb-10 relative z-10 lg:pb-20">
+            <h2 className="text-white justify-center text-center font-bold text-4xl tracking-widest pb-3 pt-12">
               WELCOME TO SCRIPT 2024
             </h2>
             <div className="flex justify-center items-center text-center">
-              <p className="text-white font-bold text-xl px-3 text-center">
+              <p className="text-white font-bold   text-sm lg:text-xl px-3 text-center">
                 A transformative 1-day event where top influencers, creators,
                 and industry experts gather to share insights, ignite ideas, and
                 foster meaningful connections. Get ready for an immersive
@@ -28,7 +38,7 @@ const Schedule = (buttonClass) => {
                 content creation.
               </p>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center lg:pt-2">
               <ScriptBtn
                 className={`mt-1  border border-white rounded-[2rem] ${buttonClass}`}
               >
@@ -46,12 +56,12 @@ const Schedule = (buttonClass) => {
       </div>
 
       <div className="container mx-auto lg:mb-12">
-        <div className="block lg:flex px-8 mt-6 lg:justify-between gap-5">
-          <div className="lg:w-[50%]">
+        <div className="grid grid-cols-12 px-8 md:p-0 mt-6 lg:justify-between gap-5">
+          <div className="col-span-12 md:col-span-6">
             <h1 className="lg:text-3xl text-center lg:text-left">
               Here's What You Can Expect:
             </h1>
-            <p className="lg:text-left text-center">
+            <p className="lg:text-left  lg:text-lg text-center">
               Join us for an immersive three-day event where industry leaders,
               influencers, and creators come together to explore the future of
               digital influence. Each day is packed with insightful sessions,
@@ -67,10 +77,26 @@ const Schedule = (buttonClass) => {
             </div>
             <img src="/cal.png" className="w-[300px] hidden lg:block" />
           </div>
+
+          <div className="col-span-12 md:col-span-6 px-4 lg:pl-8 ">
+            <ScheduleTabs
+              onTabChange={(speakers, msg) =>
+                setActiveSpeakers({ msg, speakers })
+              }
+              showSpekers={showSpekers}
+              color="orangee"
+            />
+          </div>
         </div>
-      </div>
-      <div className="px-4 lg:pl-8">
-        <ScheduleTabs showSpekers={showSpekers} color="orangee" />
+        <p className="text-center mt-4 lg:text-3xl font-bold  text-black">
+          {activeSpeakers.msg}
+        </p>
+        <div className="mx-7">
+          <Speakerss
+            speakerss={activeSpeakers.speakers}
+            color="pin"
+          ></Speakerss>
+        </div>
       </div>
       <ScriptBtn
         className={`m-2 border lg:hidden  ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
@@ -78,7 +104,7 @@ const Schedule = (buttonClass) => {
         <a href="/">Download Schedule</a>
       </ScriptBtn>
 
-      <div className="container mx-auto relative z-10   ">
+      <div className="container mx-auto relative z-10 mt-10  ">
         <Footer color="orange" />
       </div>
 

@@ -1,6 +1,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import ScriptBtn from "./ScriptBtn";
 
 function NavBar({ buttonClass, imageSrc }) {
@@ -11,8 +12,8 @@ function NavBar({ buttonClass, imageSrc }) {
   };
 
   return (
-    <header className="sticky top-0 bg-white mb-2 p-2 z-50 container mx-auto">
-      <div className="">
+    <header className="sticky top-0 border-y bg-white mb-2 p-4 md:p-2 z-50">
+      <div className="container">
         <div className="flex items-center justify-between">
           <Link to="/">
             <img
@@ -21,7 +22,7 @@ function NavBar({ buttonClass, imageSrc }) {
             />
           </Link>
 
-          <nav className="hidden lg:flex space-x-12 text-xl ">
+          <nav className="hidden lg:flex space-x-12 text-xl">
             <NavLink
               className={(navClass) =>
                 navClass.isActive
@@ -32,7 +33,17 @@ function NavBar({ buttonClass, imageSrc }) {
             >
               About
             </NavLink>
-            <a href="#speakerss">Speakers</a>
+
+            <NavLink
+              className={(navClass) =>
+                navClass.isActive
+                  ? "font-bold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
+                  : "text-black"
+              }
+              to="/Speakers"
+            >
+              Speakers
+            </NavLink>
             <NavLink
               className={(navClass) =>
                 navClass.isActive
@@ -92,14 +103,11 @@ function NavBar({ buttonClass, imageSrc }) {
               >
                 About
               </NavLink>
+
               <NavLink
-                to="/"
+                to="/Speakers"
                 onClick={toggleMobileMenu}
-                className={(navClass) =>
-                  navClass.isActive
-                    ? "bg-gradient-to-r from-pink-400 to-orange-500 text-transparent bg-clip-text"
-                    : "text-black"
-                }
+                className="text-black"
               >
                 Speakers
               </NavLink>

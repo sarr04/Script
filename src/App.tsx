@@ -4,13 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Speakers from "./components/home/Speakerss";
+import Speakers from "./pages/Speakers";
 import Schedule from "./pages/Schedule";
 import BookATicket from "./pages/BookATicket";
 import Chat from "./pages/BookTicket/Chat";
 import Hero from "./components/home/Hero";
 import Aboutt from "./components/home/Aboutt";
-import Box from "./components/box";
+
 import { useForm } from "react-hook-form";
 const router = createBrowserRouter([
   {

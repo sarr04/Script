@@ -1,10 +1,7 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import ScriptBtn from "../components/ScriptBtn";
-import Socials from "../components/Socials";
-import { Link } from "react-router-dom";
 import Footer from "../components/home/Footer";
-import React from "react";
 import Hover from "../components/Hover";
 import ScheduleTabs from "../components/ScheduleTabs";
 import Speakers from "../components/home/Speakerss";
@@ -29,13 +26,13 @@ const About = (buttonClass) => {
   ];
 
   return (
-    <section className="overflow-x-hidden">
+    <section>
       <NavBar
         buttonClass="bg-custom2 hover:bg-blue-700"
         imageSrc="/img/Logoblue.svg"
       />
 
-      <div className="w-[90%] lg:w-full max-w-screen-lg mx-auto px-4 lg:py-20 mt-5 p-10 bg-custom2 rounded-3xl text-white">
+      <div className="w-[90%] lg:w-[1200px]  mx-auto px-4 lg:pb-20  p-10 bg-custom2 rounded-[2rem] text-white">
         <div className="text-center">
           <h1 className="font-bold text-4xl tracking-widest">
             ABOUT SCRIPT CONFERENCE
@@ -140,7 +137,7 @@ const About = (buttonClass) => {
         </div>
       )}
 
-      <div id="speakerss" className="container mx-auto text-center px-4 mt-10">
+      <div className="container mx-auto text-center px-4 mt-10">
         <h1 className="font-bold text-3xl pt-12 pb-5">WHO ATTENDS SCRIPT?</h1>
         <h4 className="text-xl">
           SCRIPT connects influencers, content creators, and industry
@@ -149,7 +146,7 @@ const About = (buttonClass) => {
         </h4>
         <h3 className="font-bold text-xl">Here's who you'll meet at SCRIPT:</h3>
       </div>
-      <div className="mx-3">
+      <div className="lg:mx-48 mx-7">
         <Speakers
           speakerss={[
             {

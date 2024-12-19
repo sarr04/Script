@@ -1,4 +1,3 @@
-import { HashLink as Link } from "react-router-hash-link";
 import Speakerss from "../components/home/Speakerss";
 import Hero from "../components/home/Hero";
 import NavBar from "../components/NavBar";
@@ -34,8 +33,7 @@ export default function Home() {
         </h4>
       </div>
 
-      <Link smooth to="/#speakers"></Link>
-      <div id="speakers" className="container px-5">
+      <div className="container  ">
         <Speakerss
           speakerss={[
             {

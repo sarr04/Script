@@ -3,8 +3,7 @@ import { useState } from "react";
 import NavBar from "../../components/NavBar";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ScriptBtn from "../../components/ScriptBtn";
-import { Link, useNavigate } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   firstName: string;
@@ -31,9 +30,32 @@ const Input = ({ buttonClass }: InputProps) => {
   const navigate = useNavigate();
   const [image, setImage] = useState<string | null>(null);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
-    navigate("/Chat");
+    const { Photo, ...otherData } = data;
+    console.log(Photo);
+
+    try {
+      const info = {
+        ...otherData,
+        photo: ".....",
+      };
+
+      const response = await fetch("https://example.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(info),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        navigate("/Chat");
+      } else {
+        console.error("Form submission failed", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

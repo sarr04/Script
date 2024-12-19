@@ -1,8 +1,8 @@
 import React from "react";
 import ScriptBtn from "./ScriptBtn";
 const colors = {
-  orange: "bg-gradient-to-r from-orange-400 to-pink-500",
-  purple: "bg-gradient-to-b from-blue-300 to-purple-50",
+  orange: "custom",
+  purple: "custom2",
 };
 type TitleProps = {
   color: keyof typeof colors;
