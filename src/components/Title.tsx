@@ -1,11 +1,12 @@
-import React from "react";
 import ScriptBtn from "./ScriptBtn";
+
 const colors = {
   orange: "custom",
   purple: "custom2",
 };
 type TitleProps = {
   color: keyof typeof colors;
+  buttonClass?: string;
 };
 
 export default function Title(props: TitleProps) {
@@ -30,7 +31,7 @@ export default function Title(props: TitleProps) {
             </div>
             <div className="flex justify-center items-center">
               <ScriptBtn
-                className={`m-4 border border-white rounded-[2rem] ${buttonClass}`}
+                className={`m-4 border border-white rounded-[2rem] ${props.buttonClass}`}
               >
                 <a href="/BookATicket">Book A Ticket</a>
               </ScriptBtn>

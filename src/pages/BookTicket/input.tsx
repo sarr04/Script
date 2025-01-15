@@ -40,11 +40,18 @@ const Input = ({ buttonClass }: InputProps) => {
         ...otherData,
         photo: ".....",
       };
+      console.log(info); //to remove the typescript error
+      const formData = new FormData();
 
-      const response = await fetch("https://example.com", {
+      // formData.append('photo', data.Photo)
+      // formData.append('username', data.username)
+      // formData.append('email', data.email)
+      // formData.append('photo', data.Photo)
+
+      const response = await fetch("/api/register/attendee", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(info),
+        // headers: { "Content-Type": "application/json" },
+        body: formData,
       });
 
       if (response.ok) {

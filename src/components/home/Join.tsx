@@ -1,5 +1,10 @@
 import ScriptBtn from "../ScriptBtn";
-export default function Join(buttonClass) {
+
+type Props = {
+  buttonClass: string;
+};
+
+export default function Join({ buttonClass }: Props) {
   return (
     <div className="overflow-hidden">
       <div className="lg:mx-auto lg:mt-12">

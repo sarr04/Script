@@ -22,7 +22,6 @@ const Speakers = () => {
       </div>
       <div className="lg:mx-36 mx-11 ">
         <Speakerss
-          showAll
           speakerss={[
             {
               name: "Ronald Richards",
@@ -128,6 +127,9 @@ const Speakers = () => {
             },
           ]}
           color="blu"
+          limit={100}
+          buttonClass="btn-primary"
+          showAll={true}
         />
       </div>
       <div className="container mx-auto relative z-10 my-10 lg:translate-y-40 ">

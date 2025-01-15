@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto">
-        <Aboutt />
+        <Aboutt buttonClass="" />
       </div>
 
       <div className="container mx-auto text-black rounded-2xl bg-white h-150 w-170 relative z-20  ">
@@ -33,7 +33,7 @@ export default function Home() {
         </h4>
       </div>
 
-      <div className="container  ">
+      <div className="mx-6 ">
         <Speakerss
           speakerss={[
             {
@@ -140,15 +140,22 @@ export default function Home() {
             },
           ]}
           color="pin"
+          limit={8}
+          showAll={false}
+          buttonClass="btn-primary"
         />
       </div>
 
       <div className="container mx-auto">
-        <Join />
+        <Join buttonClass="" />
       </div>
 
       <div className="container mx-auto  flex flex-col items-center text-black bg-white pb-18 pt-28">
-        <img src="/img/ll.png" className="absolute left-0  w-full lg:hidden" />
+        <img
+          src="/img/ll.png"
+          className="absolute left-0 w-[100%] h-[40%] lg:hidden scale-x-105 translate-y-50"
+        />
+        {/* <img src="/img/lll.png" /> */}
         <h3 className="hidden md:block text-center lg:text-2xl">
           EVENT SPONSOR
         </h3>
@@ -173,7 +180,7 @@ export default function Home() {
 
       <img
         src="/img/ll.png"
-        className="absolute left-0 w-full lg:w-full lg:-translate-y-96 -translate-y-28"
+        className="absolute left-0 w-full lg:w-full lg:-translate-y-96 -translate-y-28 "
       />
     </div>
   );

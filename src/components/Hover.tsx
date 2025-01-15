@@ -1,9 +1,20 @@
 import { RxTriangleDown } from "react-icons/rx";
 import { AiOutlineMinus } from "react-icons/ai";
 import { CgMathPlus } from "react-icons/cg";
-import React from "react";
-
-const Hover = ({ buttonText, hoverGradient, text, isOpen, onToggle }) => {
+type HoverProps = {
+  buttonText: string;
+  hoverGradient: string;
+  text?: string;
+  isOpen: boolean;
+  onToggle: () => void;
+};
+const Hover: React.FC<HoverProps> = ({
+  buttonText,
+  hoverGradient,
+  text,
+  isOpen,
+  onToggle,
+}) => {
   return (
     <div
       onClick={onToggle}

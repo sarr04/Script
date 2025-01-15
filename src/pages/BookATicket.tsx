@@ -1,5 +1,5 @@
 import Input from "./BookTicket/Input";
-const BookATicket = (props) => {
-  return <Input />;
+const BookATicket = () => {
+  return <Input buttonClass="string" />;
 };
 export default BookATicket;

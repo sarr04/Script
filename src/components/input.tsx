@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const BookATicket = (props) => {
+const BookATicket = () => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(inputValue);
   };
@@ -25,3 +25,4 @@ const BookATicket = (props) => {
     </form>
   );
 };
+export default BookATicket;

@@ -1,6 +1,6 @@
 import ScriptBtn from "../ScriptBtn";
 
-export default function Aboutt(buttonClass) {
+export default function Aboutt({ buttonClass }: { buttonClass?: string }) {
   return (
     <section className="relative ">
       <img
@@ -36,53 +36,53 @@ export default function Aboutt(buttonClass) {
         <div className="container px-3 relative lg:mt-8">
           <div className=" bg-custom rounded-[2rem] ">
             <div className=" flex justify-center md:justify-around flex-wrap gap-4 p-4">
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[140px] h-[140px] lg:h-[300px]  lg:w-[300px] rounded-[1rem] flex flex-col items-center text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] shadow-md bg-white/15  w-[140px] h-[140px] lg:h-[300px]  lg:w-[300px] rounded-[1rem] flex flex-col items-center text-center about-card-shadow">
                 <img
-                  className="bg-white lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
+                  className="bg-white lg:p-2 rounded-full absolute top-3 left-5 h-[22px] lg:h-[45px]"
                   src="/img/mic.svg"
                 />
                 <img
                   src="/Group 2.png"
                   className="absolute top-0 right-0 w-1/2  opacity-50 "
                 />
-                <h2 className="lg:text-4xl text-xl absolute bottom-16 left-6  lg:absolute lg:left-7 lg:top-20 font-bold text-white mt-12">
+                <h2 className="lg:text-4xl text-xl absolute bottom-16 left-4  lg:absolute lg:left-7 lg:top-20 font-bold text-white mt-12">
                   10+
                 </h2>
-                <p className="lg:text-3xl  absolute bottom-8 left-6 lg:absolute lg:left-7 lg:bottom-20  text-xl font-semibold text-white mt-2">
+                <p className="lg:text-3xl  absolute bottom-8 left-4 lg:absolute lg:left-7 lg:bottom-20  text-xl font-semibold text-white mt-2">
                   Speakers
                 </p>
               </div>
 
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  w-[140px] h-[140px] lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col items-center text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15 shadow-md  w-[140px] h-[140px] lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col items-center text-center about-card-shadow">
                 <img
-                  className="bg-white lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
+                  className="bg-white lg:p-2 rounded-full absolute top-3 left-5 h-[22px] lg:h-[45px]"
                   src="/img/mdi_talk.svg"
                 />
                 <img
                   src="/Group 2.png"
                   className="absolute top-0 right-0  w-1/2  opacity-50"
                 />
-                <h2 className="absolute bottom-16 left-6 lg:absolute lg:top-20 lg:left-7  lg:text-4xl text-xl font-bold text-white mt-12">
+                <h2 className="absolute bottom-16 left-4 lg:absolute lg:top-20 lg:left-7  lg:text-4xl text-xl font-bold text-white mt-12">
                   50+
                 </h2>
-                <p className="lg:text-3xl absolute bottom-8 left-6 lg:absolute lg:left-7 lg:bottom-20 text-xl font-semibold text-white mt-2">
+                <p className="lg:text-3xl absolute bottom-8 left-4 lg:absolute lg:left-7 lg:bottom-20 text-xl font-semibold text-white mt-2">
                   Sessions
                 </p>
               </div>
 
-              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15  justify-center w-[140px] h-[140px]  lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col  items-center  text-center about-card-shadow">
+              <div className="relative overflow-hidden backdrop-blur-[20px] bg-white/15 shadow-md  justify-center w-[140px] h-[140px]  lg:h-[300px] lg:w-[300px] rounded-[1rem]  flex flex-col  items-center  text-center about-card-shadow">
                 <img
-                  className="bg-white  lg:p-2 rounded-full absolute top-5 left-5 h-[30px] lg:h-[45px]"
+                  className="bg-white  lg:p-2 rounded-full absolute top-3 left-5 h-[22px] lg:h-[45px]"
                   src="/img/peoplee.svg"
                 />
                 <img
                   src="/Group 2.png"
                   className="absolute top-0 right-0  w-1/2  opacity-50"
                 />
-                <h2 className=" absolute bottom-16 left-6 lg:absolute lg:top-20 lg:left-7  lg:text-4xl text-xl font-bold text-white mt-12">
+                <h2 className=" absolute bottom-16 left-4 lg:absolute lg:top-20 lg:left-7  lg:text-4xl text-xl font-bold text-white mt-12">
                   2000
                 </h2>
-                <p className=" absolute bottom-8 left-6 lg:text-3xl lg:absolute lg:left-7 lg:bottom-20  text-xl font-semibold text-white mt-2">
+                <p className=" absolute bottom-8 left-4 lg:text-3xl lg:absolute lg:left-7 lg:bottom-20  text-xl font-semibold text-white mt-2">
                   Attendees
                 </p>
               </div>

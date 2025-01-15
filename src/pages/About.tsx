@@ -5,25 +5,26 @@ import Footer from "../components/home/Footer";
 import Hover from "../components/Hover";
 import ScheduleTabs from "../components/ScheduleTabs";
 import Speakers from "../components/home/Speakerss";
+import Accordions from "../components/Accordions";
 
-const About = (buttonClass) => {
-  const [openIndex, setOpenIndex] = useState(null);
+const About = (props: { buttonClass?: string }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const showSpekers = false;
 
-  const handleToggle = (index) => {
+  const handleToggle = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   const [hoverNetworking, setHoverNetworking] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const featuresText = [
     "Expand your reach and build meaningful connections with fellow influencers, creators, and industry leaders. SCRIPT offers unparalleled opportunities to network with the top minds in social media.",
-    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo inventore quae quia doloribus necessitatibus tenetur omnis dignissimos excepturi aliquid accusantium dicta sapiente d",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo inventore quae quia doloribus necessitatibus tenetur omnis dignissimos excepturi aliquid accusantium dicta sapiente dolor iure nihil neque amet ducimus, ipsam",
   ];
+  console.log(toggleOpen, hoverNetworking, setHoverNetworking); //for the ts err
 
   return (
     <section>
@@ -31,21 +32,22 @@ const About = (buttonClass) => {
         buttonClass="bg-custom2 hover:bg-blue-700"
         imageSrc="/img/Logoblue.svg"
       />
-
-      <div className="w-[90%] lg:w-[1200px]  mx-auto px-4 lg:pb-20  p-10 bg-custom2 rounded-[2rem] text-white">
-        <div className="text-center">
-          <h1 className="font-bold text-4xl tracking-widest">
-            ABOUT SCRIPT CONFERENCE
-          </h1>
-          <h3 className="my-4 lg:text-xl text-lg font-semibold">
-            Bringing together the brightest minds in social media to inspire,
-            connect, and drive change
-          </h3>
-          <ScriptBtn
-            className={`border inline-block border-white px-7 mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
-          >
-            <a href="/BookATicket">Book A Ticket</a>
-          </ScriptBtn>
+      <div className="p-8">
+        <div className=" lg:w-full  mx-auto px-4 lg:pb-20  p-10 bg-custom2 rounded-[2rem] text-white">
+          <div className="text-center">
+            <h1 className="font-bold text-4xl tracking-widest">
+              ABOUT SCRIPT CONFERENCE
+            </h1>
+            <h3 className="my-4 lg:text-xl text-lg font-semibold">
+              Bringing together the brightest minds in social media to inspire,
+              connect, and drive change
+            </h3>
+            <ScriptBtn
+              className={`border inline-block border-white px-7 mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${props.buttonClass}`}
+            >
+              <a href="/BookATicket">Book A Ticket</a>
+            </ScriptBtn>
+          </div>
         </div>
       </div>
 
@@ -54,7 +56,7 @@ const About = (buttonClass) => {
           OUR MISSION & VISION
         </h1>
 
-        <div className="flex flex-col lg:flex-row lg:gap-10 items-center lg:items-start text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row lg:gap-10 items-center text-center lg:text-left">
           <div className="flex flex-col lg:w-1/2">
             <h1 className="font-bold text-2xl lg:text-black text-purple-700 mb-2 lg:text-3xl">
               Our Mission
@@ -68,16 +70,16 @@ const About = (buttonClass) => {
           <div className="relative flex lg:w-1/2 justify-center lg:justify-end">
             <img
               src="/img/1.png"
-              className="relative lg:h-[500px] lg:w-[600px] scale-125 -translate-x-5 hidden md:block"
+              className="relative lg:h-[400px] object-cover lg:w-full scale-100  hidden md:block"
             />
             <img
               src="/img/shap-06.png"
-              className="absolute top-1/2 translate-y-[-50%] left-[50%] translate-x-[-60%]  lg:w-[400px] hidden md:block"
+              className="absolute top-1/2 translate-y-[-50%] left-[50%] translate-x-[-60%]  object-cover lg:w-[400px] hidden md:block"
             />
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row-reverse lg:gap-10 items-center lg:items-start mt-10 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row-reverse lg:gap-10 items-center  mt-10 text-center lg:text-left">
           <div className="flex flex-col lg:w-1/2">
             <h1 className="font-bold text-2xl lg:text-black text-purple-700 mb-2 lg:text-3xl">
               Our Vision
@@ -91,7 +93,7 @@ const About = (buttonClass) => {
           <div className="relative flex lg:w-1/2 justify-center lg:justify-start">
             <img
               src="/img/2.png"
-              className="relative lg:w-[500px] scale-125 translate-x-4 hidden md:block -translate-y-24"
+              className="relative lg:w-[400px] scale-125 translate-x-4 hidden md:block -translate-y-24"
             />
             <img
               src="/halfcircle.png"
@@ -100,43 +102,58 @@ const About = (buttonClass) => {
           </div>
         </div>
       </div>
-
-      <div className="container mx-auto text-center pt-8">
+      <div className="container  text-center pt-8">
         <h1 className="font-bold text-4xl py-6">WHY SCRIPT?</h1>
       </div>
-
-      <div className="container mx-auto lg:flex justify-center items-center grid grid-rows-3 gap-2 relative overflow-hidden lg:py-7">
+      <div className="container mx-auto lg:flex justify-center items-center  gap-2 relative overflow-hidden  hidden  md:block lg:py-7">
         <img src="squarepattern.png" className="absolute  hidden md:block" />
-        <img
+        {/* <img
           src="/tallbrand.png"
-          className="absolute w-full h-full block lg:hidden"
-        />
+          className="absolute w-full h-full block lg:hidde -translate-y-11"
+        /> */}
+
         <Hover
           buttonText="Networking"
           hoverGradient="from-purple-400 to-blue-500"
           isOpen={openIndex === 0}
           onToggle={() => handleToggle(0)}
+          text=""
         />
         <Hover
           buttonText="Exclusive Content"
           hoverGradient="from-green-400 to-blue-500"
           isOpen={openIndex === 1}
           onToggle={() => handleToggle(1)}
+          text=""
         />
         <Hover
           buttonText="Industry Experts"
           hoverGradient="from-pink-400 to-purple-500"
           isOpen={openIndex === 2}
           onToggle={() => handleToggle(2)}
+          text=""
         />
       </div>
-
+      <div className="relative">
+        <div className="container mx-auto md:hidden justify-center items-center grid  py-24 gap-2 relative overflow-hidden ">
+          {/* <img
+            src="squarepattern.png"
+            className="absolute hidden md:block overflow-hidden"
+          /> */}
+          <img
+            src="/tallbrand.png"
+            className="absolute top-0 block md:hidden"
+          />
+          <div className=" md:hidden">
+            <Accordions />
+          </div>
+        </div>
+      </div>
       {openIndex !== null && (
         <div className="container mx-auto text-center mt-4">
           <p>{featuresText[openIndex]}</p>
         </div>
       )}
-
       <div className="container mx-auto text-center px-4 mt-10">
         <h1 className="font-bold text-3xl pt-12 pb-5">WHO ATTENDS SCRIPT?</h1>
         <h4 className="text-xl">
@@ -146,7 +163,7 @@ const About = (buttonClass) => {
         </h4>
         <h3 className="font-bold text-xl">Here's who you'll meet at SCRIPT:</h3>
       </div>
-      <div className="lg:mx-48 mx-7">
+      <div className=" mx-7 xl:px-32">
         <Speakers
           speakerss={[
             {
@@ -193,19 +210,19 @@ const About = (buttonClass) => {
             },
           ]}
           color="blu"
+          buttonClass="btn-primary"
+          limit={4}
+          showAll={true}
         />
       </div>
-
       <ScriptBtn
-        className={`border border-white lg:mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${buttonClass}`}
+        className={`border border-white lg:mt-9 bg-transparent backdrop-blur-[150px] rounded-3xl text-center ${props.buttonClass}`}
       >
         <a href="/BookATicket">View More</a>
       </ScriptBtn>
-
       <div className="container mx-auto mt-9 mb-4 lg:text-5xl text-4xl font-bold text-center">
         DAILY SCHEDULE
       </div>
-
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 justify-between lg:mt-6">
         <div className="px-4 space-y-4">
           <h4 className="font-bold text-center lg:text-left text-xl">
@@ -219,7 +236,7 @@ const About = (buttonClass) => {
             professionals.
           </p>
           <ScriptBtn
-            className={`text-white bg-custom2 mt-4 hidden lg:block bg-transparent backdrop-blur-[150px] mb-5 rounded-3xl text-center ${buttonClass}`}
+            className={`text-white bg-custom2 mt-4 hidden lg:block bg-transparent backdrop-blur-[150px] mb-5 rounded-3xl text-center ${props.buttonClass}`}
           >
             Download Schedule
           </ScriptBtn>
@@ -230,20 +247,24 @@ const About = (buttonClass) => {
         </div>
 
         <div className="px-4 lg:pl-8">
-          <ScheduleTabs showSpekers={showSpekers} color="bluee" />
+          <ScheduleTabs
+            showSpekers={showSpekers}
+            color="bluee"
+            onTabChange={(activeTab) => {
+              console.log("Active tab changed to:", activeTab);
+            }}
+          />
         </div>
 
         <ScriptBtn
-          className={`text-white bg-custom2 mx-7 lg:hidden block lg:mx-10 bg-transparent backdrop-blur-[150px] mb-5 rounded-3xl text-center ${buttonClass}`}
+          className={`text-white bg-custom2 mx-7 lg:hidden block lg:mx-10 bg-transparent backdrop-blur-[150px] mb-5 rounded-3xl text-center ${props.buttonClass}`}
         >
           Download Schedule
         </ScriptBtn>
       </div>
-
       <div className="container mx-auto relative z-10">
         <Footer color="purple" />
       </div>
-
       <img
         src="/img/ll.png"
         className="absolute left-0 w-full lg:-translate-y-96 -translate-y-28"

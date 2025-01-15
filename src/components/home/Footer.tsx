@@ -11,7 +11,7 @@ export default function Footer(props: FooterProps) {
   return (
     <footer className="container mx-auto">
       <div
-        className={`relative w-[90%] mx-auto lg:w-full flex flex-col lg:pt-32 pb-24 pt-24 lg:pb-32 items-center gap-4  ${
+        className={`relative w-[90%] mx-auto lg:w-full flex flex-col lg:pt-32 py-24 sm:py-12 lg:pb-32 items-center gap-4  ${
           colors[props.color]
         } rounded-[2rem] py-8 px-4 lg:flex-row lg:justify-between lg:gap-4 lg:py-16 lg:px-12`}
       >

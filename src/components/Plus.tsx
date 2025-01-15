@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CgMathPlus } from "react-icons/cg";
 import { AiOutlineMinus } from "react-icons/ai";
 

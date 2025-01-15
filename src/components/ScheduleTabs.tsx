@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Speakerss, { Speaker } from "./home/Speakerss";
 
 const colors = {
@@ -13,8 +13,6 @@ type TabsProps = {
 };
 
 function ScheduleTabs(props: TabsProps) {
-  const [activeTab, setActiveTab] = useState("morning");
-
   const speakersData = {
     morning: [
       {
@@ -83,7 +81,8 @@ function ScheduleTabs(props: TabsProps) {
       },
     ],
   };
-
+  const [activeTab, setActiveTab] =
+    useState<keyof typeof speakersData>("morning");
   const scheduleContent = {
     morning: [
       {
@@ -176,6 +175,7 @@ function ScheduleTabs(props: TabsProps) {
   useEffect(() => {
     props.onTabChange?.(speakersData[activeTab], speakerMessages[activeTab]);
   }, [activeTab]);
+  console.log(Speakerss);
 
   return (
     <div className="mt-4 lg:mt-0">

@@ -1,10 +1,13 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import ScriptBtn from "./ScriptBtn";
 
-function NavBar({ buttonClass, imageSrc }) {
+import ScriptBtn from "./ScriptBtn";
+type NavBarProps = {
+  buttonClass?: string;
+  imageSrc: string;
+};
+const NavBar: React.FC<NavBarProps> = ({ buttonClass, imageSrc }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -17,7 +20,7 @@ function NavBar({ buttonClass, imageSrc }) {
         <div className="flex items-center justify-between">
           <Link to="/">
             <img
-              className="lg:pt-4 lg:h-[50px] h-[25px] pr-10"
+              className="lg:pt-4 lg:h-[50px] h-[18px] pr-10"
               src={imageSrc}
             />
           </Link>
@@ -127,7 +130,9 @@ function NavBar({ buttonClass, imageSrc }) {
                 className={`rounded-[2rem] text-white w-full mt-4 ${buttonClass}`}
                 onClick={toggleMobileMenu}
               >
-                <NavLink to="/BookATicket">Book A Ticket</NavLink>
+                <NavLink to="/BookATicket" className="w-full h-full block">
+                  Book A Ticket
+                </NavLink>
               </ScriptBtn>
             </nav>
           </div>
@@ -135,6 +140,6 @@ function NavBar({ buttonClass, imageSrc }) {
       </div>
     </header>
   );
-}
+};
 
 export default NavBar;

@@ -3,10 +3,10 @@ import NavBar from "../components/NavBar";
 import ScheduleTabs from "../components/ScheduleTabs";
 import ScriptBtn from "../components/ScriptBtn";
 import { useState } from "react";
-import Speakers from "./Speakers";
+
 import Speakerss, { Speaker } from "../components/home/Speakerss";
 
-const Schedule = (buttonClass) => {
+const Schedule = (props: { buttonClass?: string }) => {
   const [activeSpeakers, setActiveSpeakers] = useState<{
     speakers: Speaker[];
     msg: string;
@@ -40,7 +40,7 @@ const Schedule = (buttonClass) => {
             </div>
             <div className="flex justify-center items-center lg:pt-2">
               <ScriptBtn
-                className={`mt-1  border border-white rounded-[2rem] ${buttonClass}`}
+                className={`mt-1  border border-white rounded-[2rem] ${props.buttonClass}`}
               >
                 <a href="/BookATicket">Download Schedule</a>
               </ScriptBtn>
@@ -70,7 +70,7 @@ const Schedule = (buttonClass) => {
             </p>
             <div className="flex">
               <ScriptBtn
-                className={`m-2 border-white bg-custom hidden lg:block rounded-[2rem] ${buttonClass}`}
+                className={`m-2 border-white bg-custom hidden lg:block rounded-[2rem] ${props.buttonClass}`}
               >
                 <a href="/">Download Schedule</a>
               </ScriptBtn>
@@ -78,7 +78,7 @@ const Schedule = (buttonClass) => {
             <img src="/cal.png" className="w-[300px] hidden lg:block" />
           </div>
 
-          <div className="col-span-12 md:col-span-6 px-4 lg:pl-8 ">
+          <div className="col-span-12 md:col-span-6  lg:pl-8 ">
             <ScheduleTabs
               onTabChange={(speakers, msg) =>
                 setActiveSpeakers({ msg, speakers })
@@ -95,14 +95,17 @@ const Schedule = (buttonClass) => {
           <Speakerss
             speakerss={activeSpeakers.speakers}
             color="pin"
+            limit={4}
+            showAll={true}
+            buttonClass="btn-primary"
           ></Speakerss>
         </div>
       </div>
-      <ScriptBtn
-        className={`m-2 border lg:hidden  ml-10 border-white bg-custom rounded-[2rem] ${buttonClass}`}
-      >
-        <a href="/">Download Schedule</a>
-      </ScriptBtn>
+      <div className="flex items-center justify-center ">
+        <ScriptBtn className="m-2 border md:hidden ml-10 border-white bg-custom rounded-[2rem] justify-center ${props.buttonClass}">
+          <a href="/">Download Schedule</a>
+        </ScriptBtn>
+      </div>
 
       <div className="container mx-auto relative z-10 mt-10  ">
         <Footer color="orange" />
